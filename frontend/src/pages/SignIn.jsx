@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useState,useEffect} from 'react'
 import axios from 'axios'
@@ -11,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 import { setFormData } from '../redux/formSlice'
 import {refreshSignIn} from '../redux/userSlice'
 import api from "../api/axios";
-
 
 const Button = ({ children, className, icon, ...props }) => (
   <button
@@ -42,13 +40,7 @@ const InputField = ({ label, ...props }) => (
   </div>
 );
 
-
-
-
-
 function Login(){
-
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch();
@@ -69,31 +61,17 @@ function Login(){
 
   useEffect(()=>{
     dispatch(refreshSignIn())
-    
   },[])
 
-
-
-   // Extract 'verified' query parameter from URL on component mount
-   useEffect(() => {
-
-    
+  useEffect(() => {
     if (params.get('verified') === 'true') {
       setVerifiedMessage('Your email has been verified. Please enter your details to login.');
     }
   }, [location.search]);
 
-
   const handleThis = () => {
-  
     navigate('/signup');
   }
-
-
-
-
-
-
 
   const handleSubmit = async (e) => {
     console.log("button clicked")
@@ -103,139 +81,114 @@ function Login(){
       return dispatch(signInFailure('Please fill all fields')) ;
     }
     try{
-
       dispatch(signInStart());
    
       const res = await api.post('/auth/signin', {
         email: email.trim(),
         password: password.trim()
-
       },{
         headers: {
           'Content-Type': 'application/json'
         }
       })
 
-        dispatch(signInSuccess(res.data)); 
+      dispatch(signInSuccess(res.data)); 
 
-
-        if(path !== 'undefined' && path !== null && path !== '/'){
-   
-          dispatch(
-           setFormData({
-            phoneNo: phoneNumber,
-            numberOfGuests: numberOfGuests,
-            checkInDate: checkInDate,
-            checkOutDate: checkOutDate
-          }))
-
-
-         navigate(path);
-
-        }
-        else{
-
-          navigate('/', { replace: true });
-        }
-        
-  
-
+      if(path !== 'undefined' && path !== null && path !== '/'){
+        dispatch(
+         setFormData({
+          phoneNo: phoneNumber,
+          numberOfGuests: numberOfGuests,
+          checkInDate: checkInDate,
+          checkOutDate: checkOutDate
+        }))
+        navigate(path);
+      }
+      else{
+        navigate('/', { replace: true });
+      }
     }catch(e){
       console.log(e);
-      
       dispatch(signInFailure(e.response?.data?.message || "An error occured"));
     }
-    
-
   }
+
   const handleKeyPress = (e) => {
     if(e.key === 'Enter'){
       handleSubmit(e);
     }
-    }
-
+  }
 
   return(
     <main className="min-h-screen bg-slate-800 relative flex items-center justify-center p-4">
-    <img
-      src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082851/signin_bg_opfxwf.png"
-      alt="Background"
-      className="absolute inset-0 w-full h-full object-cover"
-    />
-    <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
-      <div className="lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-4xl lg:text-6xl text-white leading-tight acme-font">
-          You're just one step away from embarking on a remarkable{" "} </h1>
-          <span className="text-teal-400 anton-font text-8xl" style={{ fontFamily: "'Aladdin', cursive" }}>Adventure</span>
-        
-      </div>
-      <div className="lg:w-1/2 w-full max-w-md">
-        {verifiedMessage && (
-              <div className='mt-4 p-4 rounded-lg text-center bg-green-100 text-green-700 border border-green-400'>
-                Your email has been verified. Please enter your details to login.
-              </div>
-            )}
-        <form className="bg-black bg-opacity-60 rounded-xl border border-white border-opacity-20 p-6 text-lg" onSubmit={handleSubmit} >
-          <h2 className="font-bold text-white text-2xl mb-6 text-left">Log in</h2>
-          <OAuth/>
-          <div className="my-4 flex items-center">
-            <hr className="flex-grow border-white border-opacity-80" />
-            <span className="px-3 text-white text-opacity-80">or</span>
-            <hr className="flex-grow border-white border-opacity-80" />
-          </div>
-          <InputField 
-          value={email}
-          onChange={(e)=>{setEmail(e.target.value)}}
-          onKeyPress={handleKeyPress}
-          label="Email" 
-          type="email" 
-          required
-          placeholder="Enter Your Email Address" />
-
-
-
-          <InputField 
-          value={password}
-          onChange={(e)=>{setPassword(e.target.value)}}
-          onKeyPress={handleKeyPress}
-          label="Password" 
-          type="password" 
-          required
-          placeholder="Enter Your Password" />
-
-
-          <Button 
-          disabled={loading}
-          onKeyPress={handleKeyPress}
-          className="mt-6 font-bold text-white bg-teal-400 bg-opacity-60 hover:bg-opacity-80">
-            {loading ? (<Spinner animation="border" role="status">
-                          <span className="visually-hidden">Loading...</span>
-                        </Spinner>) : 'Sign In'}
-          </Button>
-
-
-          <div className="text-center text-white mt-6">
-            <p>Don't have an account?</p>
-            <a onClick={handleThis} className="font-bold text-teal-400 hover:underline mt-2 inline-block transition-transform duration-300 hover:scale-105">
-              Sign up
-            </a>
-          </div>
-        </form>
-        {errorMessage && (
-        <div
-          className='mt-4 p-4 rounded-lg text-center bg-red-100 text-red-700 border border-red-400'
-        >
-          {errorMessage}
+      <img
+        src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082851/signin_bg_opfxwf.png"
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white leading-tight acme-font">
+            You're just one step away from embarking on a remarkable{" "}
+          </h1>
+          <span className="text-teal-400 anton-font text-4xl sm:text-5xl md:text-6xl lg:text-8xl" style={{ fontFamily: "'Aladdin', cursive" }}>Adventure</span>
         </div>
-      )}
+        <div className="lg:w-1/2 w-full max-w-md">
+          {verifiedMessage && (
+            <div className='mt-4 p-4 rounded-lg text-center bg-green-100 text-green-700 border border-green-400'>
+              Your email has been verified. Please enter your details to login.
+            </div>
+          )}
+          <form className="bg-black bg-opacity-60 rounded-xl border border-white border-opacity-20 p-6 text-lg" onSubmit={handleSubmit} >
+            <h2 className="font-bold text-white text-2xl mb-6 text-left">Log in</h2>
+            <OAuth/>
+            <div className="my-4 flex items-center">
+              <hr className="flex-grow border-white border-opacity-80" />
+              <span className="px-3 text-white text-opacity-80">or</span>
+              <hr className="flex-grow border-white border-opacity-80" />
+            </div>
+            <InputField 
+              value={email}
+              onChange={(e)=>{setEmail(e.target.value)}}
+              onKeyPress={handleKeyPress}
+              label="Email" 
+              type="email" 
+              required
+              placeholder="Enter Your Email Address" />
+            <InputField 
+              value={password}
+              onChange={(e)=>{setPassword(e.target.value)}}
+              onKeyPress={handleKeyPress}
+              label="Password" 
+              type="password" 
+              required
+              placeholder="Enter Your Password" />
+            <Button 
+              disabled={loading}
+              onKeyPress={handleKeyPress}
+              className="mt-6 font-bold text-white bg-teal-400 bg-opacity-60 hover:bg-opacity-80">
+              {loading ? (<Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </Spinner>) : 'Sign In'}
+            </Button>
+            <div className="text-center text-white mt-6">
+              <p>Don't have an account?</p>
+              <a onClick={handleThis} className="font-bold text-teal-400 hover:underline mt-2 inline-block transition-transform duration-300 hover:scale-105">
+                Sign up
+              </a>
+            </div>
+          </form>
+          {errorMessage && (
+          <div
+            className='mt-4 p-4 rounded-lg text-center bg-red-100 text-red-700 border border-red-400'
+          >
+            {errorMessage}
+          </div>
+        )}
+        </div>
       </div>
-    </div>
-  </main>
-
+    </main>
   )
-
-
 }
-
 
 export default Login;

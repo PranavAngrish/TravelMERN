@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-
-// Import your local images here
 import Footer from "../components/footer";
 import { useNavigate } from "react-router-dom";
 
 const AmenityItem = ({ text }) => (
   <div className="flex items-center gap-2 p-2 rounded transition-all duration-300 transform hover:scale-105">
     <img src='https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082737/check_dhncdq.png' alt="Checkmark" className="w-5 h-5" />
-    <span>{text}</span>
+    <span className="text-lg md:text-xl lg:text-2xl">{text}</span>
   </div>
 );
 
@@ -30,7 +28,7 @@ const ImageCarousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden group">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden group">
       {images.map((image, index) => (
         <div
           key={index}
@@ -90,7 +88,6 @@ function MyComponent() {
   const handleLogo = () => {
     navigate('/');
   }
-  
 
   return (
     <div className="min-h-screen bg-slate-800 text-white relative">
@@ -100,37 +97,31 @@ function MyComponent() {
       ></div>
       
       <div className="relative z-10">
-        <header className="bg-cover bg-center flex flex-col items-center p-8" 
+        <header className="bg-cover bg-center flex flex-col items-center p-4 sm:p-6 md:p-8" 
                 style={{backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079843/title_bg_vi4p9m.png')"}}>
-
-          <div onClick={handleLogo}>
-          <img 
-            src={logo} 
-            alt="Logo" 
-            className="w-32 mb-4 transition-transform duration-300 transform hover:scale-110" 
-          />
-
+          <div onClick={handleLogo} className="cursor-pointer">
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="w-24 sm:w-28 md:w-32 mb-4 transition-transform duration-300 transform hover:scale-110" 
+            />
           </div>
-          
-
-          
-          
-          <h1 className="text-4xl text-center">Family Suite</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-center">Family Suite</h1>
         </header>
         
-        <main className="max-w-7xl mx-auto p-8">
+        <main className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
           <ImageCarousel images={images} />
           
-          <div className="flex justify-between mt-6 mb-10">
+          <div className="flex justify-between mt-4 sm:mt-6 mb-6 sm:mb-10">
             {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star} className="text-2xl transition-transform duration-300 transform hover:scale-110">⭐</span>
+              <span key={star} className="text-xl sm:text-2xl transition-transform duration-300 transform hover:scale-110">⭐</span>
             ))}
           </div>
           
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-6 sm:gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-6xl mb-6 mt-16">Amenities</h2>
-              <div className="grid grid-cols-2 gap-4 text-3xl text-[#D9D9D9]">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 mt-8 sm:mt-16">Amenities</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xl sm:text-2xl md:text-3xl text-[#D9D9D9]">
                 <AmenityItem text="Common Pool" />
                 <AmenityItem text="On Site Parking" />
                 <AmenityItem text="Spa & Salon" />
@@ -140,15 +131,18 @@ function MyComponent() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <p className="p-4 rounded transition-all duration-300 transform hover:scale-105 text-2xl">
-              Discover our Family Suite, where luxury meets panoramic views from your private balcony. Perfectly designed for comfort and relaxation, this spacious retreat offers modern amenities and plush furnishings for an unforgettable stay. Whether you're admiring sunrise vistas or unwinding together, our suite promises a luxurious experience for the whole family.
+              <p className="p-4 rounded transition-all duration-300 transform hover:scale-105 text-lg sm:text-xl md:text-2xl">
+                Discover our Family Suite, where luxury meets panoramic views from your private balcony. Perfectly designed for comfort and relaxation, this spacious retreat offers modern amenities and plush furnishings for an unforgettable stay. Whether you're admiring sunrise vistas or unwinding together, our suite promises a luxurious experience for the whole family.
               </p>
-              <div className="mt-6">
-                <div className="text-4xl p-4 rounded transition-all duration-300 transform hover:scale-105">
+              <div className="mt-4 sm:mt-6">
+                <div className="text-2xl sm:text-3xl md:text-4xl p-4 rounded transition-all duration-300 transform hover:scale-105">
                   FARE DETAILS
-                  <span className="text-2xl text-[#D9D9D9] block">XXXXXX</span>
+                  <span className="text-lg sm:text-xl md:text-2xl text-[#D9D9D9] block">XXXXXX</span>
                 </div>
-                <button onClick={handleClick} className="bg-cyan-500 text-white py-3 px-40 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 mt-4">
+                <button 
+                  onClick={handleClick} 
+                  className="w-full sm:w-auto bg-cyan-500 text-white py-3 px-6 sm:px-10 md:px-20 lg:px-40 rounded-lg text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 mt-4"
+                >
                   CHECK AVAILABILITY
                 </button>
               </div>
@@ -156,7 +150,7 @@ function MyComponent() {
           </div>
         </main>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

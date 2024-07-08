@@ -1,70 +1,34 @@
-// import React from 'react'
-// import {useNavigate} from 'react-router-dom'
-// import {useDispatch, useSelector} from 'react-redux'
-
-// function ThankYou() {
-//     const navigate = useNavigate();
-//     const userDetails = useSelector((state) => state.form);
-//     const handleClick = () => {
-//         navigate('/')
-//     }
-//   return (
-//     <div>
-//         <h1>Thank you , the details have been sent to the adin and a confirmtion mail has been sent on your mail , we Will get back to you soon</h1>
-//         <h1>{userDetails.userName}</h1>
-//         <h1>{userDetails.email}</h1>
-//         <h1>{userDetails.phoneNumber}</h1>
-//         <h1>{userDetails.checkInDate}</h1>
-//         <h1>{userDetails.checkOutDate}</h1>
-
-//         <button onClick={handleClick}>HomePage</button>
-      
-//     </div>
-//   )
-// }
-
-// export default ThankYou
-
-
-
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function ThankYouPage() {
   const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
   const navigate = useNavigate();
   const location = useLocation();
   const propsToSend = location.state || {};
-  
-  
+
   return (
-    <main className="flex flex-col min-h-screen bg-cover bg-center" style={{backgroundImage: `url(${propsToSend.background})`}}>
-      <div className="bg-black bg-opacity-50 min-h-screen backdrop-blur-sm flex flex-col items-center justify-center px-4">
-        <img 
-          src={propsToSend.logo} 
-          alt="Logo" 
-          className="w-32 mb-8 transition-transform duration-300 hover:scale-110" 
-        />
-        
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg w-full max-w-xl shadow-lg transition-all duration-300 hover:shadow-white/30 text-center">
-          <h1 className="text-4xl font-light text-white mb-6">
-            Thank You for Your Enquiry
-          </h1>
-          
-          <p className="text-xl mb-8 text-cyan-500">
-            We appreciate your interest in our {propsToSend.roomName || 'room'}. Our team will review your request and contact you soon.
-          </p>
-          
-          <button 
-            onClick={() => navigate('/')} 
-            className="bg-gray-200 text-gray-800 py-3 px-8 rounded-lg text-lg font-medium transition-all duration-300 hover:bg-gray-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-6 sm:p-10 rounded-xl shadow-md">
+        <div className="flex justify-center">
+          <img className="h-12 w-auto sm:h-16" src={logo} alt="Logo" />
+        </div>
+        <h2 className="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
+          Thank You for Your Enquiry
+        </h2>
+        <p className="mt-2 text-center text-sm sm:text-base text-gray-600">
+          We appreciate your interest in our {propsToSend.roomName || 'room'}. Our team will review your request and contact you soon.
+        </p>
+        <div className="mt-6">
+          <button
+            onClick={() => navigate('/')}
+            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300"
           >
             Return to Home
           </button>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

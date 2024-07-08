@@ -41,10 +41,6 @@ function Signup() {
   const dataToBeSent = location.state?.from?.from?.a ? location.state?.from?.from?.a : null;
   const queryString = new URLSearchParams(dataToBeSent).toString();
 
-
-
-
-
   const validatePassword = (password) => {
     const minLength = 8;
     const hasUpperCase = /[A-Z]/.test(password);
@@ -81,7 +77,6 @@ function Signup() {
       return;
     }
     try {
-    
       setErrorMessage(null);
       const res = await api.post('/auth/signup', {
         userName: name.trim(),
@@ -92,7 +87,6 @@ function Signup() {
           'Content-Type': 'application/json',
         },
       });
-      
       
       setVariable(true);
       setLoading(false);
@@ -117,10 +111,10 @@ function Signup() {
       <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082851/signin_bg_opfxwf.png" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl lg:text-6xl text-white leading-tight acme-font">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white leading-tight acme-font">
             You're just one step away from embarking on a remarkable{" "}
           </h1>
-          <span className="text-teal-400 text-8xl" style={{ fontFamily: "'Aladdin', cursive" }}>Adventure</span>
+          <span className="text-teal-400 anton-font text-4xl sm:text-5xl md:text-6xl lg:text-8xl" style={{ fontFamily: "'Aladdin', cursive" }}>Adventure</span>
         </div>
         <div className="lg:w-1/2 w-full max-w-md">
           {variable && (
