@@ -33,7 +33,6 @@ import EmailVerify from '../components/EmailVerify/index'
 
 import Landing from '../pagesMohin/landing'
 import Host from '../components/host'
-import Testing from '../components/Testing.jsx'
 
 
 
@@ -86,8 +85,6 @@ function Routing() {
       <Route path="/famenq" element={<Famenq />} /> 
       <Route path="/villaenq" element={<Villaenq />} /> 
       <Route path="/homesenq" element={<Homesenq />} />  
-      <Route path="/test" element={<Testing />} /> 
-
       <Route path="/legal" element={<Legal />} />  
    
      

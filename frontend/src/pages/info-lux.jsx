@@ -73,14 +73,13 @@ const ImageCarousel = ({ images }) => {
 function MyComponent() {
   const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
   const images = [
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081152/img1_op3fii.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081149/img2_eygoiq.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081155/img3_inpa75.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081149/img4_jt8nii.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081149/img5_indrt3.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081150/img6_g67zpd.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081152/img7_pqe3ab.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081151/img8_wjxs41.jpg"
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img5_yap8bg.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img6_xep2fu.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img4_jj5dzv.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786538/img1_budpmk.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img3_nk8x77.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786560/img8_fypqic.png",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786547/img7_txpv5v.png"
   ]
   const navigate = useNavigate();
   const handleClick = () => {

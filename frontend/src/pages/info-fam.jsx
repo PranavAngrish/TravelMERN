@@ -73,12 +73,13 @@ const ImageCarousel = ({ images }) => {
 function MyComponent() {
   const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
   const images = [
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079834/img1_buouxf.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079834/img2_jlyhez.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079835/img3_quzyfu.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079837/img4_k8gwkv.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079838/img5_efvmlw.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079840/img6_kn9dtb.jpg"
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img1_tpd6df.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img2_qqdoj2.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img3_l9xlll.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785417/img6_ccbrmn.heic",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785911/img6_fkvs2s.png",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img5_mgih6e.jpg"
   ];
   const navigate = useNavigate();
   const handleClick = () => {
