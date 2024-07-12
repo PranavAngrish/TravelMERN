@@ -40,20 +40,20 @@ function LandingKasol() {
   const navigate = useNavigate();
   const rooms = [
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082851/super-deluxe_w7zsyc.png",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776121/sd_t0e1rb.jpg",
       title: "Super Deluxe Room With Balcony & Mountain View",
       buttonText: "Know More",
       linkTo: "/infosd"
     },
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082760/luxury_doufbg.png",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770734/lux_x4twoa.png",
       title: "Luxury Room With Balcony & River View",
       buttonText: "Know More",
       linkTo: "infolux"
     },
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082744/family_tdyttt.png",
-      title: "Family Suite",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776285/fam_az7tgq.jpg",
+      title: "Family Suite With Balcony",
       buttonText: "Know More",
       linkTo: "/infofam"
     }
@@ -79,7 +79,7 @@ function LandingKasol() {
           </div>
           <div className="flex flex-col sm:flex-row mb-8 sm:mb-12">
             <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
-              <h1 className="text-yellow-300 text-4xl sm:text-6xl font-bold">
+              <h1 className="text-white text-4xl sm:text-6xl font-bold">
                 MID ORCHARD<br />
                 KASOL<br />
                 RIVERSIDE

@@ -125,9 +125,9 @@ function MyComponent() {
             <div className="lg:w-1/2">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6 mt-8 sm:mt-12 lg:mt-16">Amenities</h2>
               <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xl sm:text-2xl lg:text-3xl text-[#D9D9D9]">
-                <AmenityItem text="Common Pool" />
+                <AmenityItem text="Lounge Area" />
                 <AmenityItem text="On Site Parking" />
-                <AmenityItem text="Spa & Salon" />
+                <AmenityItem text="Wardrobe" />
                 <AmenityItem text="Private Balcony" />
                 <AmenityItem text="Wifi" />
                 <AmenityItem text="Restaurant" />
@@ -139,8 +139,8 @@ function MyComponent() {
               </p>
               <div className="mt-4 sm:mt-6">
                 <div className="text-2xl sm:text-3xl lg:text-4xl p-3 sm:p-4 rounded transition-all duration-300 transform hover:scale-105">
-                  FARE DETAILS
-                  <span className="text-xl sm:text-2xl text-[#D9D9D9] block">XXXXXX</span>
+                  Room Tariff
+                  <span className="text-xl sm:text-2xl text-[#D9D9D9] block">Starts ₹2900 Per Night</span>
                 </div>
                 <button onClick={handleClick} className="bg-cyan-500 text-white py-2 sm:py-3 px-4 sm:px-6 w-full lg:w-auto lg:px-40 rounded-lg text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 mt-3 sm:mt-4">
                   CHECK AVAILABILITY

@@ -122,9 +122,9 @@ function MyComponent() {
             <div className="md:w-1/2">
               <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 mt-8 sm:mt-16">Amenities</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xl sm:text-2xl md:text-3xl text-[#D9D9D9]">
-                <AmenityItem text="Common Pool" />
+                <AmenityItem text="Lounge Area" />
                 <AmenityItem text="On Site Parking" />
-                <AmenityItem text="Spa & Salon" />
+                <AmenityItem text="Wardrobe" />
                 <AmenityItem text="Private Balcony" />
                 <AmenityItem text="Wifi" />
                 <AmenityItem text="Restaurant" />
@@ -136,8 +136,8 @@ function MyComponent() {
               </p>
               <div className="mt-4 sm:mt-6">
                 <div className="text-2xl sm:text-3xl md:text-4xl p-4 rounded transition-all duration-300 transform hover:scale-105">
-                  FARE DETAILS
-                  <span className="text-lg sm:text-xl md:text-2xl text-[#D9D9D9] block">XXXXXX</span>
+                  Room Tariff
+                  <span className="text-lg sm:text-xl md:text-2xl text-[#D9D9D9] block">Starts ₹3800 Per Night</span>
                 </div>
                 <button 
                   onClick={handleClick} 

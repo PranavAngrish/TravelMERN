@@ -59,7 +59,7 @@ const Testimonial = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-[#162237] relative bg-opacity-100" 
          style={{backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082736/bg_testimonial_uzluuy.png')"}}>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-25"></div>
       <div className="max-w-4xl w-full relative z-10">
         <h1 className="text-white text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 sm:mb-10 relative inline-block
                        hover:text-teal-400 transition-colors duration-300">

@@ -63,6 +63,9 @@ function Properties() {
         />
       </ImageWithOverlay>
       
+      {/* White line separator */}
+      <div className="h-1 bg-white"></div>
+      
       <ImageWithOverlay 
         src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082760/manali_bayn3u.png"}
         alt="Mountain landscape at sunset"

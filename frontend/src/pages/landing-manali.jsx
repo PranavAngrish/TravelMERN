@@ -52,7 +52,7 @@ function Manali() {
   };
   const rooms = [
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082715/aangan-villa_dchckp.png",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770732/villa_oy4ouc.png",
       title: "Aangan Villa",
       buttonText: "Know More",
       linkTo: "/infovilla"
@@ -86,7 +86,7 @@ function Manali() {
           </div>
           <div className="flex flex-col md:flex-row mb-6 sm:mb-8 md:mb-10">
             <div className="w-full md:w-1/2 mb-4 md:mb-0">
-              <h1 className="text-yellow-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 Aangan Villa & Homes<br />
                 by Mid Orchard,<br />
                 Manali

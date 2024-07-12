@@ -177,7 +177,7 @@ function Home() {
 
         <main className="px-4 sm:px-8 md:px-20 py-6 sm:py-10 md:py-16 flex-grow flex flex-col justify-center">
           <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4">
-            Hotel for <span className="text-[#3DBBCD] font-aguafina text-3xl sm:text-5xl md:text-7xl">memorable</span>
+            Hotel for <span className="text-[#3DBBCD] text-3xl sm:text-5xl md:text-7xl">memorable</span>
             <br />
             moments rich in
             <br />

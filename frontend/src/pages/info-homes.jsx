@@ -140,8 +140,8 @@ function MyComponent() {
               </p>
               <div className="mt-4 sm:mt-6">
                 <div className="text-2xl sm:text-3xl md:text-4xl p-4 rounded transition-all duration-300 transform hover:scale-105">
-                  FARE DETAILS
-                  <span className="text-lg sm:text-xl md:text-2xl text-[#D9D9D9] block">XXXXXX</span>
+                  Room Tariff
+                  <span className="text-lg sm:text-xl md:text-2xl text-[#D9D9D9] block">Starts ₹2400 Per Night</span>
                 </div>
                 <button 
                   onClick={handleClick} 

@@ -1,5 +1,4 @@
 import * as React from "react";
-
 const HostProfile = ({ name, location, description, imageSrc, isReversed }) => (
   <section className={`relative px-3 sm:px-6 lg:px-16 mt-6 sm:mt-10 lg:mt-20 w-full rounded-xl bg-blue-950 bg-opacity-75 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:shadow-teal-400/30`}>
     <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-4 sm:gap-6 py-4 sm:py-6 lg:py-8`}>
@@ -32,19 +31,19 @@ function Host() {
     {
       name: "Abhishek Taneja",
       location: "Kasol",
-      description: "I am a B.Tech graduate in ECE with professional experience at Ericsson Global India, Noida (2014-2016). Since 2016, I have specialized in the tourism industry, developing and managing PAN India travel packages and operations for destinations such as Andaman, Kerala, Sikkim, Meghalaya, Himachal Pradesh, Uttarakhand, as well as international locations like Singapore, Maldives, Bali, and Dubai. In 2019, I founded and currently manage three hospitality properties in Himachal.",
+      description: "B.Tech graduate in ECE with professional experience at Ericsson Global India, Noida (2014-2016). Since 2016, I have specialized in the tourism industry, developing and managing PAN India travel packages and operations for destinations such as Andaman, Kerala, Sikkim, Meghalaya, Himachal Pradesh, Uttarakhand, as well as international locations like Singapore, Maldives, Bali, and Dubai. In 2019, I established and presently oversee the operations of three hospitality properties located in Himachal Pradesh.",
       imageSrc: 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082716/abhishek_xkuh44.png'
     },
     {
       name: "Sahil Bachan",
       location: "Manali",
-      description: "I'm Sahil, a former engineer turned successful hospitality entrepreneur from Dobhi, Kullu, HP. After shifting from IT in 2014, I founded 'Camping Kona' in 2015, offering luxury camps. In 2018, I co-founded Mid Orchard, known for cottages, hostels, and hotels, where we're cherished as 'Host and Dost.' Combining technical expertise with local charm, I'm passionate about creating memorable stays in Himachal Pradesh.",
+      description: "Former engineer turned successful hospitality entrepreneur from Dobhi, Kullu, HP. After shifting from IT in 2016, I founded 'Camping Kona' in 2015, offering luxury camps. In 2020, I co-founded Mid Orchard, known for cottages, hostels, and hotels, where we're cherished as 'Host and Dost.' Combining technical expertise with local charm, I'm passionate about creating memorable stays in Himachal Pradesh.",
       imageSrc: 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082768/sahil_muo2cz.png'
     }
   ];
 
   return (
-    <main className="flex flex-col justify-center bg-slate-800 bg-cover bg-center" style={{ backgroundImage: `url(/src/assets/bg_host.jpg)` }}>
+    <main className="flex flex-col justify-center bg-slate-800 bg-cover bg-center" >
       <div className="flex overflow-hidden relative flex-col px-3 sm:px-4 lg:px-6 pt-5 sm:pt-7 lg:pt-10 pb-10 sm:pb-12 lg:pb-16 w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[800px]">
         <h1 className="relative self-center text-2xl sm:text-3xl lg:text-5xl font-semibold text-white text-center">
           Know more about your Hosts
