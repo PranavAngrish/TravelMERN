@@ -6,6 +6,8 @@ import Dashboard from '../pages/Dashboard'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 import PrivateRouting from '../components/PrivateRouting'
+import Blog from '../pages/Blog';
+import BlogPostPage from '../pages/BlogPostPage';
 
 import Kasol from '../pages/landing-kasol.jsx'
 import Manali from '../pages/landing-manali.jsx'
@@ -66,6 +68,8 @@ function Routing() {
       <Route path="/signup" element={<SignUp />} />  
       <Route path="/about" element={<AboutUs />} />    
       <Route path="/user/:id/verify/:token" element={<EmailVerify/>}></Route>
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:title" element={<BlogPostPage />} />
  
              
 
@@ -73,8 +77,8 @@ function Routing() {
       <Route path="/test/landing" element={<Landing />} /> 
       <Route path="/host" element={<Host />} /> 
   
-      <Route path="/kasol" element={<Kasol />} />    
-      <Route path="/manali" element={<Manali />} />   
+      <Route path="/midorchard-kasol" element={<Kasol />} />    
+      <Route path="/aanganhomes-manali" element={<Manali />} />   
       <Route path="/infosd" element={<SD />} />  
       <Route path="/kasol/infolux" element={<Lux />} /> 
       <Route path="/infofam" element={<Fam />} />     

@@ -12,6 +12,7 @@ import { signoutSuccess } from "../redux/userSlice";
 import { resetForm } from "../redux/formSlice";
 import api from "../api/axios";
 import Gallery from "../components/firstPage/Gallery.jsx";
+import Blog from "../pages/Blog.jsx";
 function Home() {
   const today = new Date();
   const tomorrow = new Date(today);
@@ -102,10 +103,11 @@ function Home() {
   );
 
   const navItems = [
-    { text: "Destinations", targetId: "properties-section" },
+    { text: "Properties", targetId: "properties-section" },
     { text: "Testimonials", targetId: "testimonials-section" },
     { text: "Gallery", targetId: "gallery-section" },
     { text: "About us", targetId: "about-section" },
+    { text: "Blog", targetId: "blog-section" },
     { text: "Contact", targetId: "contact-section" },
   ];
 
@@ -242,6 +244,9 @@ function Home() {
       </div>
       <div id="about-section">
         <Host/>
+      </div>
+      <div id="blog-section">
+        <Blog />
       </div>
       <div id="contact-section">
         <Footer />

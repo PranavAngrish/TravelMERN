@@ -55,7 +55,7 @@ function Properties() {
       <ImageWithOverlay 
         src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082753/kasol_hfggcj.png"}
         alt="Mountain landscape with lake"
-        linkTo="/kasol"
+        linkTo="/midorchard-kasol"
       >
         <LocationCard
           iconSrc={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png"}
@@ -69,7 +69,7 @@ function Properties() {
       <ImageWithOverlay 
         src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082760/manali_bayn3u.png"}
         alt="Mountain landscape at sunset"
-        linkTo="/manali"
+        linkTo="/aanganhomes-manali"
       >
         <LocationCard
           iconSrc={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082719/aangan_logo_mxdrjf.png"}
