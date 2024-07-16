@@ -1,25 +1,35 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const BlogPost = ({ title, date, excerpt, imageUrl }) => (
+const BlogPost = ({ title, date, excerpt, imageUrl }) => {
+  console.log("there",title , date, excerpt, imageUrl);
+  const data = {
+    title:title,
+    date:date,
+    excerpt:excerpt,
+    imageUrl:imageUrl
+  }
+  
+  return(
   <div className="bg-white bg-opacity-80 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
     <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
     <div className="p-4">
       <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
       <p className="text-sm text-gray-600 mb-2">{date}</p>
       <p className="text-gray-700">{excerpt}</p>
-      <Link 
-        to={{
-          pathname: `/blog/${title.replace(/\s+/g, '-').toLowerCase()}`,
-          state: { title, date, excerpt, imageUrl }
-        }}
+      <Link to={`/blog/${title.replace(/\s+/g, '-').toLowerCase()}`}
+      state={{ from: "occupation" , state: data }}
+        // to={{
+        //   pathname: `/blog/${title.replace(/\s+/g, '-').toLowerCase()}`,
+         
+        // }}
         className="mt-4 text-[#3DBBCD] hover:text-teal-600 transition-colors duration-300 inline-block"
       >
         Read More
       </Link>
     </div>
   </div>
-);
+)};
 
 function Blog() {
   const [visiblePosts, setVisiblePosts] = useState(3);
