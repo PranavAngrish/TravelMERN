@@ -86,7 +86,7 @@ function MyComponent() {
   ]
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/homesenq');
+    navigate('/manali-homestay-booking');
   }
 
   const handleLogo = () => {

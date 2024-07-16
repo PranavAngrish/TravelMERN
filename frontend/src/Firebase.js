@@ -9,12 +9,12 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "mern-blog-9f2ca.firebaseapp.com",
-  projectId: "mern-blog-9f2ca",
-  storageBucket: "mern-blog-9f2ca.appspot.com",
-  messagingSenderId: "973204319089",
-  appId: "1:973204319089:web:6128e72b65238f7fc664d0",
-  measurementId: "G-PF15QQHBCQ"
+  authDomain: "website-1c49c.firebaseapp.com",
+  projectId: "website-1c49c",
+  storageBucket: "website-1c49c.appspot.com",
+  messagingSenderId: "966341596176",
+  appId: "1:966341596176:web:2f4826d1b90cebf60f6695",
+  measurementId: "G-L6Z7ZR1MTQ"
 };
 
 

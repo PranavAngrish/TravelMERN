@@ -83,7 +83,7 @@ function MyComponent() {
   ];
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/famenq');
+    navigate('/family-hotel-booking');
   }
 
   const handleLogo = () => {

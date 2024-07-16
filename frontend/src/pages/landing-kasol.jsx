@@ -43,19 +43,19 @@ function LandingKasol() {
       imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776121/sd_t0e1rb.jpg",
       title: "Super Deluxe Room With Balcony & Mountain View",
       buttonText: "Know More",
-      linkTo: "/infosd"
+      linkTo: "/kasol-mountain-view-hotel"
     },
     {
       imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770734/lux_x4twoa.png",
       title: "Luxury Room With Balcony & River View",
       buttonText: "Know More",
-      linkTo: "infolux"
+      linkTo: "/kasol-river-view-hotel"
     },
     {
       imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776285/fam_az7tgq.jpg",
       title: "Family Suite With Balcony",
       buttonText: "Know More",
-      linkTo: "/infofam"
+      linkTo: "/family-hotel"
     }
   ];
 

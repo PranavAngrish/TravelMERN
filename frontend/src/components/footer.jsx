@@ -12,7 +12,7 @@ const ContactInfo = ({ icon: Icon, text }) => (
 
 const LegalLink = ({ text, targetId }) => (
   <Link 
-    to={`/legal?section=${targetId}`}
+    to={`/midorchard-policy?section=${targetId}`}
     className="text-slate-300 font-serif block mt-2 sm:mt-3 transition-transform transform hover:scale-105 hover:text-teal-400 text-xs sm:text-sm"
   >
     {text}

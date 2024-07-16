@@ -82,7 +82,7 @@ function MyComponent() {
   ]
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/sdenq');
+    navigate('/deluxe-room-booking');
   }
 
   const handleLogo = () => {

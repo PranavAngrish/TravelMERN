@@ -83,7 +83,7 @@ function MyComponent() {
   ]
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/luxenq');
+    navigate('/river-view-booking');
   }
 
   const handleLogo = () => {

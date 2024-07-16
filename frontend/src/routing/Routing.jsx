@@ -79,17 +79,17 @@ function Routing() {
   
       <Route path="/midorchard-kasol" element={<Kasol />} />    
       <Route path="/aanganhomes-manali" element={<Manali />} />   
-      <Route path="/infosd" element={<SD />} />  
-      <Route path="/kasol/infolux" element={<Lux />} /> 
-      <Route path="/infofam" element={<Fam />} />     
-      <Route path="/infovilla" element={<Villa />} />  
-      <Route path="/infohomes" element={<Homes />} /> 
-      <Route path="/sdenq" element={<Sdenq />} /> 
-      <Route path="/luxenq" element={<Luxenq />} />
-      <Route path="/famenq" element={<Famenq />} /> 
-      <Route path="/villaenq" element={<Villaenq />} /> 
-      <Route path="/homesenq" element={<Homesenq />} />  
-      <Route path="/legal" element={<Legal />} />  
+      <Route path="/kasol-mountain-view-hotel" element={<SD />} />  
+      <Route path="/kasol-river-view-hotel" element={<Lux />} /> 
+      <Route path="/family-hotel" element={<Fam />} />     
+      <Route path="/luxury-villa" element={<Villa />} />  
+      <Route path="/homestay-manali" element={<Homes />} /> 
+      <Route path="/deluxe-room-booking" element={<Sdenq />} /> 
+      <Route path="/river-view-booking" element={<Luxenq />} />
+      <Route path="/family-hotel-booking" element={<Famenq />} /> 
+      <Route path="/luxury-villa-booking" element={<Villaenq />} /> 
+      <Route path="/manali-homestay-booking" element={<Homesenq />} />  
+      <Route path="/midorchard-policy" element={<Legal />} />  
    
      
 

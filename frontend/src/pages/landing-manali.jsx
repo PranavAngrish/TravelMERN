@@ -55,13 +55,13 @@ function Manali() {
       imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770732/villa_oy4ouc.png",
       title: "Aangan Villa",
       buttonText: "Know More",
-      linkTo: "/infovilla"
+      linkTo: "/luxury-villa"
     },
     {
       imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082714/aangan-homes_mv7rac.png",
       title: "Aangan Homestays",
       buttonText: "Know More",
-      linkTo: "/infohomes"
+      linkTo: "/homestay-manali"
     },
   ];
 

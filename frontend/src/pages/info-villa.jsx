@@ -92,7 +92,7 @@ function MyComponent() {
   ]
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/villaenq');
+    navigate('/luxury-villa-booking');
   }
 
   const handleLogo = () => {
