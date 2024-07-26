@@ -45,7 +45,7 @@ const BlogPostPage = () => {
             <p className="text-sm text-gray-400 mb-6">{post.date}</p>
             <p className="text-xl text-gray-300 mb-8 font-light italic">{post.excerpt}</p>
             <div className="prose prose-lg prose-invert max-w-none">
-              {post.content.map((paragraph, index) => (
+              {post.content.map((section, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -53,11 +53,12 @@ const BlogPostPage = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="mb-8"
                 >
-                  <p className="mb-4">{paragraph.text}</p>
-                  {paragraph.image && (
+                  <h2 className="text-2xl font-semibold text-[#3DBBCD] mb-4">{section.subheading}</h2>
+                  <p className="mb-4">{section.text}</p>
+                  {section.image && (
                     <motion.img 
-                      src={paragraph.image} 
-                      alt={`Image for paragraph ${index + 1}`}
+                      src={section.image} 
+                      alt={`Image for ${section.subheading}`}
                       className="w-full rounded-lg shadow-md mb-4"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}

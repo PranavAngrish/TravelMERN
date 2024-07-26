@@ -39,13 +39,16 @@ export const blogPosts = [
     slug: "top-10-local-attractions",
     content: [
       {
+        subheading: "Unveiling the Hidden Gems",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/attractions_1.jpg"
       },
       {
+        subheading: "Popular Landmarks You Can't Miss",
         text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
       {
+        subheading: "Off the Beaten Path: Local Favorites",
         text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/attractions_2.jpg"
       }
@@ -59,13 +62,39 @@ export const blogPosts = [
     slug: "culinary-journey",
     content: [
       {
+        subheading: "The Art of Flavor Fusion",
         text: "Our chef's signature dishes are a testament to culinary excellence and creativity.",
         image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_1.jpg"
       },
       {
+        subheading: "Local Ingredients, Global Inspiration",
         text: "Each dish tells a story of local ingredients and international inspiration.",
       },
       {
+        subheading: "From Farm to Table: Our Commitment",
+        text: "From farm to table, we ensure that every bite is an unforgettable experience.",
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_2.jpg"
+      }
+    ]
+  },
+  {
+    title: "A Culinary Journey: Our Chef's Signature Dishes",
+    date: "June 28, 2024",
+    excerpt: "Explore the flavors and stories behind our most beloved menu items.",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_placeholder.jpg",
+    slug: "culinary-journey",
+    content: [
+      {
+        subheading: "The Art of Flavor Fusion",
+        text: "Our chef's signature dishes are a testament to culinary excellence and creativity.",
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_1.jpg"
+      },
+      {
+        subheading: "Local Ingredients, Global Inspiration",
+        text: "Each dish tells a story of local ingredients and international inspiration.",
+      },
+      {
+        subheading: "From Farm to Table: Our Commitment",
         text: "From farm to table, we ensure that every bite is an unforgettable experience.",
         image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_2.jpg"
       }
