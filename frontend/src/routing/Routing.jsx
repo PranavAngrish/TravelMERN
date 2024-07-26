@@ -69,7 +69,7 @@ function Routing() {
       <Route path="/about" element={<AboutUs />} />    
       <Route path="/user/:id/verify/:token" element={<EmailVerify/>}></Route>
       <Route path="/blog" element={<Blog />} />
-      <Route path="/blog/:title" element={<BlogPostPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
  
              
 
