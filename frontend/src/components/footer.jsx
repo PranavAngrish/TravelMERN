@@ -87,23 +87,46 @@ const Footer = () => {
   ];
 
   const locations = [
-    { name: "Aangan By Mid Orchard, Manali", position: { lat: 32.086581343440756, lng: 77.12471822486917 } },
+    { name: "Aangan Homes By Mid Orchard", position: { lat: 32.086581343440756, lng: 77.12471822486917 } },
     { name: "Mid Orchard Kasol- Riverside", position: { lat: 32.00687539017791, lng: 77.27902534946384 } },
   ];
 
-  const handleLocationClick = (lat, lng) => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        const url = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${lat},${lng}`;
-        window.open(url, '_blank');
-      }, () => {
-        const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-        window.open(url, '_blank');
-      });
+  const handleLocationClick = (destinationName) => {
+    const encodedDestination = encodeURIComponent(destinationName);
+    const isAppleDevice = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    
+    const urls = {
+      googleMaps: `comgooglemaps://?q=${encodedDestination}&center=${encodedDestination}`,
+      appleMaps: `maps://maps.apple.com/?q=${encodedDestination}`,
+      androidGoogleMaps: `https://www.google.com/maps/search/?api=1&query=${encodedDestination}`,
+      browser: `https://www.google.com/maps/search/?api=1&query=${encodedDestination}`
+    };
+  
+    if (isAppleDevice) {
+      // Try opening Google Maps first
+      window.location.href = urls.googleMaps;
+      
+      // If Google Maps doesn't open, try Apple Maps after a short delay
+      setTimeout(() => {
+        window.location.href = urls.appleMaps;
+      }, 1000);
+      
+      // If neither app opens, fall back to browser after another short delay
+      setTimeout(() => {
+        window.location = urls.browser;
+      }, 2000);
+    } else if (isAndroid) {
+      // For Android, try to open in Google Maps app
+      window.location.href = urls.androidGoogleMaps;
+      
+      // Fall back to browser if the app doesn't open
+      setTimeout(() => {
+        window.location = urls.browser;
+      }, 1000);
     } else {
-      const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
-      window.open(url, '_blank');
+      // For desktop or other devices, open in a new tab
+      window.open(urls.browser, '_blank');
     }
   };
 
@@ -180,7 +203,7 @@ const Footer = () => {
                     <div className="bg-white text-black p-1 sm:p-2 rounded shadow-md" style={{ width: '120px', fontSize: '10px' }}>
                       <p className="font-semibold mb-1">{location.name}</p>
                       <button 
-                        onClick={() => handleLocationClick(location.position.lat, location.position.lng)}
+                        onClick={() => handleLocationClick(location.name)}
                         className="w-full px-1 py-0.5 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-xs"
                       >
                         Get Directions
