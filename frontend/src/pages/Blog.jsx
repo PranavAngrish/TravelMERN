@@ -32,71 +32,118 @@ const BlogPost = ({ title, date, excerpt, imageUrl, slug }) => {
 
 export const blogPosts = [
   {
-    title: "Top 10 Local Attractions Near Our Hotel",
-    date: "July 10, 2024",
-    excerpt: "Discover the must-visit spots around our hotel, from hidden gems to popular landmarks.",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/attractions_placeholder.jpg",
-    slug: "top-10-local-attractions",
+    title: "The Spiritual Essence of Pure Veg Cuisine at Hotel Mid Orchard, Kasol",
+    date: "July 8, 2024",
+    excerpt: "The Only Pure Vegetarian Hotel in Kasol",
+    imageUrl: "https://lh3.googleusercontent.com/p/AF1QipPWe-JqL6N-xxx4Glq7yizj7MFRbfM522BqsB6N=s1360-w1360-h1020",
+    slug: "spiritual-essence-pure-veg-cuisine",
     content: [
       {
-        subheading: "Unveiling the Hidden Gems",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/attractions_1.jpg"
+        subheading: "A Haven for Vegetarian Delights",
+        text: [
+          "Hotel Mid Orchard proudly holds the distinction of being the only pure vegetarian hotel in Kasol. For travelers who cherish vegetarianism as not just a choice but a way of life, this charming retreat offers a sanctuary where dietary preferences align seamlessly with cultural values."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787229/img2_vgx6k2.jpg"
       },
       {
-        subheading: "Popular Landmarks You Can't Miss",
-        text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        subheading: "Beyond Food: An Enlightened Culinary Journey",
+        text: [
+          "More than just a place to dine, Hotel Mid Orchard cultivates an atmosphere where every meal is an enriching experience. The dishes served here are not merely culinary delights but a reflection of the philosophy that food nourishes not just the body, but also the soul. The pure veg food in Kasol offered at Hotel Mid Orchard ensures that every meal is a celebration of vegetarian cuisine."
+        ]
       },
       {
-        subheading: "Off the Beaten Path: Local Favorites",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/attractions_2.jpg"
+        subheading: "Unparalleled Hospitality",
+        text: "Beyond its culinary offerings, Hotel Mid Orchard extends warm hospitality that makes every guest feel like family. From the moment you arrive, you're welcomed into a space where comfort meets conscientious living, ensuring that your stay is not just pleasant but memorable. Experience the best vegetarian food in Kasol while enjoying the warmth and comfort of Hotel Mid Orchard.",
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722070994/IMG_0497_1_ek2ycd.jpg"
+      },
+      {
+        subheading: "Plan Your Stay",
+        text: "Ready to embark on a journey of culinary discovery and cultural immersion? Book your stay at Hotel Mid Orchard today and immerse yourself in the essence of vegetarianism amidst the breathtaking beauty of Kasol. As the only pure veg hotel, we promise an unforgettable experience."
       }
     ]
   },
   {
-    title: "A Culinary Journey: Our Chef's Signature Dishes",
-    date: "June 28, 2024",
-    excerpt: "Explore the flavors and stories behind our most beloved menu items.",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_placeholder.jpg",
-    slug: "culinary-journey",
+    title: "Top 3 Riverside Hotels in Kasol",
+    date: "July 15, 2024",
+    excerpt: "A Family-Friendly Haven",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722071150/IMG_2210_2_icy0ij.jpg",
+    slug: "top-riverside-hotels-kasol",
     content: [
       {
-        subheading: "The Art of Flavor Fusion",
-        text: "Our chef's signature dishes are a testament to culinary excellence and creativity.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_1.jpg"
+        subheading: "1. Mid Orchard a Secluded Riverside Retreat ",
+        text: [
+          "Hotel Mid Orchard is situated in a secluded location, 3 kilometers away from the hustle and bustle of the market. There are only a few riverside family hotels in Kasol, and Hotel Mid Orchard is one of them. It offers mesmerizing views from private balconies, allowing guests to soak in the natural beauty of the Parvati River and the surrounding mountains. The property provides all essential facilities such as room service, modern attached washrooms, toiletries, tour/trek assistance, and a multi-cuisine restaurant to cater to the diverse preferences of its guests.",
+          "Riverside Views in Kasol",
+          "Situated right by the river, Hotel Mid Orchard offers breathtaking views of the Parvati River and the surrounding mountains. Imagine waking up to the soothing sound of flowing water and the sight of the sun rising over the mountains. The hotel's riverside location provides a tranquil setting, perfect for relaxation and rejuvenation. Whether you want to take a leisurely stroll by the river or simply enjoy the view from your room, Hotel Mid Orchard ensures a memorable stay."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg"
       },
       {
-        subheading: "Local Ingredients, Global Inspiration",
-        text: "Each dish tells a story of local ingredients and international inspiration.",
+        subheading: "2. Moksha Riverside Cottage Kasol",
+        text: [
+          "Tranquil Retreat Kasol",
+          "Moksha Riverside Cottage is another excellent choice for a riverside stay in Kasol. This hotel is known for its tranquil ambiance and beautiful surroundings. The cottages are designed to provide a cozy and comfortable stay, making it a perfect retreat for travelers seeking peace and serenity.",
+          "Riverside Cottages",
+          "The riverside cottages at Moksha offer stunning views of the Parvati River. The soothing sound of the river and the lush greenery create a peaceful atmosphere, ideal for unwinding and rejuvenating. Guests can relax on the private balconies, enjoying the serene views and fresh mountain air.",
+          "Gourmet Experience",
+          "Moksha Riverside Cottage features a restaurant that serves a variety of delicious dishes. Guests can savor their meals while taking in the picturesque views of the river and mountains. The restaurant offers a mix of local and international cuisines, ensuring a delightful dining experience for all guests."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722071215/MR_img_1_jhzlhx.jpg"
       },
       {
-        subheading: "From Farm to Table: Our Commitment",
-        text: "From farm to table, we ensure that every bite is an unforgettable experience.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_2.jpg"
+        subheading: "3. Parvati Kuteer Kasol",
+        text: [
+          "Cozy and Comfortable",
+          "Parvati Kuteer is a cozy riverside hotel in Kasol that offers a comfortable and homely stay. The wooden cottages are well-equipped with modern amenities, ensuring a pleasant stay for guests.",
+          "Riverside Deck",
+          "One of the highlights of Parvati Kuteer is its riverside deck. Guests can relax on the deck, enjoy a cup of tea, and soak in the serene beauty of the Parvati River. The deck is also an excellent spot for yoga and meditation sessions, providing a peaceful environment for spiritual practices.",
+          "Local Cuisine",
+          "Parvati Kuteer's restaurant serves delicious local cuisine, giving guests a taste of Himachali flavors. The restaurant's riverside location enhances the dining experience, making it a memorable one."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722071233/PK_img_1_dvxieg.jpg"
+      },
+      {
+        subheading: "Conclusion",
+        text: [
+          "Kasol's riverside hotels offer a perfect blend of natural beauty, comfort, and hospitality. Among these, Hotel Mid Orchard stands out with its family-friendly environment, pure veg restaurant, and stunning riverside views. Whether you choose to stay at Hotel Mid Orchard, Moksha Riverside Cottage, or Parvati Kuteer, you're sure to have an unforgettable experience in the lap of nature.",
+          "Plan your stay at Hotel Mid Orchard for a unique and serene riverside retreat in Kasol. Enjoy the tranquility of the river, the majestic mountains, and the warm hospitality that will make your vacation truly special."
+        ],
       }
     ]
   },
   {
-    title: "A Culinary Journey: Our Chef's Signature Dishes",
-    date: "June 28, 2024",
-    excerpt: "Explore the flavors and stories behind our most beloved menu items.",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_placeholder.jpg",
-    slug: "culinary-journey",
+    title: "Best Secluded Stay in Manali: Aangan Villa and Homes by Mid Orchard",
+    date: "July 24, 2024",
+    excerpt: " If you're seeking a serene and private retreat, finding the right place to stay is crucial. Aangan Villa & Homes is just the place",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082193/img3_q58lox.jpg",
+    slug: "best-secluded-stay-manali",
     content: [
       {
-        subheading: "The Art of Flavor Fusion",
-        text: "Our chef's signature dishes are a testament to culinary excellence and creativity.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_1.jpg"
+        subheading: "Tranquil and Secluded Location",
+        text: [
+          "Aangan Villa and Homes by Mid Orchard offers an unparalleled secluded experience. Nestled amidst the breathtaking landscapes of Manali, this property provides a peaceful retreat away from the crowded tourist spots. The villas and homes are strategically located to ensure complete privacy, making it the best homestay in Manali for those seeking a quiet escape."
+        ]
       },
       {
-        subheading: "Local Ingredients, Global Inspiration",
-        text: "Each dish tells a story of local ingredients and international inspiration.",
+        subheading: "Luxurious and Comfortable Accommodations",
+        text: [
+          "The accommodations at Aangan Villa and Homes are designed to offer the utmost comfort and luxury. Each villa and home is tastefully furnished, blending modern amenities with traditional Himachali architecture. Spacious bedrooms, cozy living areas, and well-equipped kitchens ensure a comfortable stay for families, couples, or solo travelers. This makes it an ideal choice for a homestay in Manali with a kitchen and those looking for a long-term stay homestay in Manali."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082145/img10_rir5fo.jpg"
       },
       {
-        subheading: "From Farm to Table: Our Commitment",
-        text: "From farm to table, we ensure that every bite is an unforgettable experience.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/culinary_2.jpg"
+        subheading: "Stunning Views and Scenic Beauty",
+        text: [
+          "One of the highlights of staying at Aangan Villa and Homes is the breathtaking views it offers. Wake up to the sight of snow-capped mountains, lush valleys, and the serene Beas River. The property’s elevated location provides panoramic views that are sure to leave you mesmerized, making it a top choice for a mountain view homestay in Manali."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080680/img8_bvrosw.jpg"
+      },
+      {
+        subheading: "Proximity to Manali's Attractions",
+        text: [
+          "While Aangan Villa and Homes offers a secluded retreat, it is also conveniently located close to Manali’s popular attractions. Whether you want to explore the Hadimba Temple, visit the Solang Valley for adventure sports, or take a leisurely stroll on the Mall Road, you’re just a short drive away from these activities. The property’s location allows you to enjoy the best of both worlds – peace and tranquility at your stay and easy access to Manali’s vibrant culture.",
+          "If you’re looking for the best secluded stay or Airbnb near Manali, Aangan Villa and Homes by Mid Orchard is your ideal choice. With its tranquil location, luxurious accommodations, stunning views, personalized hospitality, and eco-friendly practices, it offers a perfect retreat for those seeking peace and rejuvenation. Book your stay at Aangan Villa and Homes and experience the serene beauty of Manali like never before."
+        ],
       }
     ]
   },
@@ -120,7 +167,7 @@ function Blog() {
   return (
     <section ref={blogRef} id="blog-section" className="relative z-10 py-16 bg-slate-800 bg-opacity-10 bg-cover bg-center">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-8">Our Blog</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-8">Our Blogs</h2>
         <p className="text-center text-gray-200 mb-12 max-w-2xl mx-auto">
           Stay updated with our latest news, travel tips, and insider insights to make the most of your stay.
         </p>

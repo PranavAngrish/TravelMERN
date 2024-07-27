@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryImages = {
@@ -30,28 +30,27 @@ const Gallery = () => {
   const [activeLocation, setActiveLocation] = useState('kasol');
   const [showAll, setShowAll] = useState(false);
 
-  const handleLocationChange = (location) => {
+  const handleLocationChange = useCallback((location) => {
     setActiveLocation(location);
     setShowAll(false);
-  };
+  }, []);
 
-  const toggleShowAll = () => {
+  const toggleShowAll = useCallback(() => {
     setShowAll((prev) => !prev);
-  };
+  }, []);
 
-  const displayedImages = showAll
-    ? galleryImages[activeLocation]
-    : galleryImages[activeLocation].slice(0, 6);
+  const displayedImages = useMemo(() => {
+    return showAll
+      ? galleryImages[activeLocation]
+      : galleryImages[activeLocation].slice(0, 6);
+  }, [activeLocation, showAll]);
 
   return (
     <section
       id="gallery-section"
-      className="relative py-16 px-4 text-white"
+      className="relative py-16 px-4 text-white bg-fixed bg-cover bg-center"
       style={{
         backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720789199/bg_aed367.webp')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50" />
@@ -71,20 +70,7 @@ const Gallery = () => {
             onClick={() => handleLocationChange('manali')}
           />
         </div>
-        <AnimatePresence>
-          <motion.div
-            key={activeLocation}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {displayedImages.map((image, index) => (
-              <GalleryItem key={`${activeLocation}-${index}`} src={image} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        <GalleryGrid images={displayedImages} location={activeLocation} />
         {galleryImages[activeLocation].length > 6 && (
           <div className="text-center mt-10">
             <button
@@ -100,7 +86,7 @@ const Gallery = () => {
   );
 };
 
-const LocationButton = ({ location, isActive, onClick }) => (
+const LocationButton = React.memo(({ location, isActive, onClick }) => (
   <button
     className={`mx-2 px-6 py-2 rounded-xl transition-all duration-300 ${
       isActive
@@ -111,9 +97,26 @@ const LocationButton = ({ location, isActive, onClick }) => (
   >
     {location}
   </button>
-);
+));
 
-const GalleryItem = ({ src }) => (
+const GalleryGrid = React.memo(({ images, location }) => (
+  <AnimatePresence>
+    <motion.div
+      key={location}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {images.map((image, index) => (
+        <GalleryItem key={`${location}-${index}`} src={image} />
+      ))}
+    </motion.div>
+  </AnimatePresence>
+));
+
+const GalleryItem = React.memo(({ src }) => (
   <motion.div
     layout
     initial={{ opacity: 0 }}
@@ -127,8 +130,9 @@ const GalleryItem = ({ src }) => (
       alt="Gallery"
       className="w-full h-64 object-cover transition-transform duration-300"
       whileHover={{ scale: 1.1 }}
+      loading="lazy"
     />
   </motion.div>
-);
+));
 
 export default Gallery;
