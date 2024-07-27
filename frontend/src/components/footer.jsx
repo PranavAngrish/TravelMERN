@@ -72,8 +72,7 @@ const Footer = () => {
   });
 
   const contactInfo = [
-    { icon: FaPhone, text: "+91 8580641878 (Kasol)" },
-    { icon: FaPhone, text: "+91 9317900124 (Manali)" },
+    { icon: FaPhone, text: "+91 8580641878" },
     { icon: FaEnvelope, text: "midorchardcottage@gmail.com" },
     { icon: FaInstagram, text: "@midorchard" },
     { icon: FaInstagram, text: "@aanganforyou" },
