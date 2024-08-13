@@ -35,7 +35,7 @@ export const blogPosts = [
     title: "The Spiritual Essence of Pure Veg Cuisine at Hotel Mid Orchard, Kasol",
     date: "July 8, 2024",
     excerpt: "The Only Pure Vegetarian Hotel in Kasol",
-    imageUrl: "https://lh3.googleusercontent.com/p/AF1QipPWe-JqL6N-xxx4Glq7yizj7MFRbfM522BqsB6N=s1360-w1360-h1020",
+    imageUrl: "https://res.cloudinary.com/dk3qqzafg/image/upload/v1723546798/pic_hykq2k.jpg",
     slug: "spiritual-essence-pure-veg-cuisine",
     content: [
       {
