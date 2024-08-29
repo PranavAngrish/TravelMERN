@@ -147,6 +147,91 @@ export const blogPosts = [
       }
     ]
   },
+  {
+    title: "Hotel Mid Orchard Kasol: The Ultimate Dog-Friendly Riverside Retreat",
+    date: "August 2, 2024",
+    excerpt: "A Pet-Friendly retreat perfect for your next trip to Kasol",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg",
+    slug: "mid-orchard-pet-friendly-retreat",
+    content: [
+      {
+        subheading: "Dog-Friendly Resorts Near Me: Your Ideal Kasol Getaway",
+        text: [
+          "When searching for the perfect escape where your pet is just as welcome as you are, Hotel Mid Orchard Kasol tops the list of dog-friendly resorts near me. This serene riverside hotel, nestled along the Parvati River, is a prime destination for pet lovers seeking both comfort and adventure in the heart of Kasol."
+        ],
+      },
+      {
+        subheading: "Pet-Friendly Hotels in Kasol: A Riverside Stay You’ll Both Love",
+        text: [
+          "Looking for pet-friendly hotels in Kasol? Hotel Mid Orchard offers everything you need for a memorable stay with your furry friend. From the tranquil riverside setting to the welcoming atmosphere, this hotel ensures that both you and your pet feel right at home, making it a standout among Kasol pet-friendly stays."
+        ],
+      },
+      {
+        subheading: "Kasol Dog-Friendly Accommodations with Riverside Views",
+        text: [
+          "Wake up to the soothing sounds of the Parvati River, with the majestic Himalayas as your backdrop. As one of the top Kasol dog-friendly accommodations, Hotel Mid Orchard offers rooms with private balconies, allowing you and your pet to enjoy the serene river views. The combination of modern amenities and a pet-welcoming environment makes it one of the best pet-friendly riverside hotels in Himachal."
+        ],
+      },
+      {
+        subheading: "Hotels for Pets in Kasol: All the Comforts You Need",
+        text: [
+          "Hotel Mid Orchard Kasol goes beyond being just a dog-friendly resort—it’s a place where pets are pampered just as much as their owners. With easy access to pet food, cozy rooms, 24/7 hot water, and secure parking, every detail is taken care of to ensure a hassle-free stay. Whether you’re looking to relax or explore, this is one of the top hotels for pets in Kasol."
+        ],
+      },
+      {
+        subheading: "Best Riverside Hotels in Kasol for Pets: Experience the Ultimate Stay",
+        text: [
+          "Imagine spending your days exploring the scenic beauty of Kasol and your evenings unwinding on your private balcony, with your pet by your side. As one of the best riverside hotels in Kasol for pets, Hotel Mid Orchard offers the perfect blend of nature and comfort. And if you need some time to yourself, our pet babysitting services ensure your furry friend is in good hands."
+        ],
+      },
+      {
+        subheading: "Kasol Hotels: Book Your Pet-Friendly Riverside Escape Today",
+        text: [
+          "Why settle for less when you can have the best? Make your reservation at Hotel Mid Orchard Kasol, one of the top dog-friendly resorts near you. Whether you’re planning a quiet retreat or an adventure-filled holiday, this Kasol hotel is ready to welcome you and your pet for an unforgettable stay."
+        ],
+      }
+    ]
+  },
+  {
+    title: "Aangan 3 BHK Villa near Manali: The Ultimate Luxury Retreat",
+    date: "August 15, 2024",
+    excerpt: "A Luxury Villa amidst orchards",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img2_brhgdh.jpg",
+    slug: "aangan-villa-near-manali",
+    content: [
+      {
+        subheading: "Experience the Best Luxury Villas in Manali",
+        text: [
+          "Looking for a cozy and spacious retreat for your family near Manali? Aangan 3 BHK Villa offers the perfect blend of comfort and charm, making it the ideal choice for family get-togethers. This luxury villa in Manali is designed to provide a relaxing and enjoyable experience for all."
+        ],
+      },
+      {
+        subheading: "Discover Modern Amenities and Comfort in Private Villas in Manali",
+        text: [
+          "With three beautifully furnished bedrooms, Aangan Villa provides ample space for everyone in your family to unwind. The living area features a warm fireplace, perfect for family gatherings or simply relaxing after a day of exploration. The villa also includes a private modern kitchen, ideal for cooking meals together. Plus, the attic wooden room adds a unique touch, making it a great space for kids or a quiet retreat."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
+      },
+      {
+        subheading: "Relax in the Best Luxury Villas with Mountain Views in Manali",
+        text: [
+          "Indulge in a luxurious soak in the bathtub after a day of adventure or savor the serene atmosphere of this villa in Manali for rent. The attic wooden room offers a charming space for relaxation, blending rustic charm with modern comforts. Surrounded by lush apple and plum orchards, Aangan Villa provides breathtaking views and a peaceful environment, enhancing your stay with natural beauty."
+        ],
+      },
+      {
+        subheading: "Ideal Villas in Manali for Couples and Families",
+        text: [
+          "Whether you’re looking for a villa in Manali for couples or a family-friendly villa near Manali, Aangan 3 BHK Villa offers a versatile setting for all. For couples, the intimate and serene surroundings provide the perfect backdrop for a romantic escape. For families, the spacious accommodations and luxurious amenities ensure a comfortable and memorable stay."
+        ],
+      },
+      {
+        subheading: "Book the Best Private Villas in Manali for Your Next Getaway",
+        text: [
+          "Don’t miss out on staying at the best villa in Manali. Whether you’re planning a family vacation or a romantic retreat, Aangan 3 BHK Villa combines comfort, luxury, and natural beauty. Reserve your stay today and experience one of the top private villas in Manali."
+        ],
+      },
+    ]
+  },
 ];
 
 function Blog() {
