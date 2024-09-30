@@ -32,36 +32,222 @@ const BlogPost = ({ title, date, excerpt, imageUrl, slug }) => {
 
 export const blogPosts = [
   {
-    title: "The Spiritual Essence of Pure Veg Cuisine at Hotel Mid Orchard, Kasol",
-    date: "July 8, 2024",
-    excerpt: "The Only Pure Vegetarian Hotel in Kasol",
-    imageUrl: "https://res.cloudinary.com/dk3qqzafg/image/upload/v1723546798/pic_hykq2k.jpg",
-    slug: "spiritual-essence-pure-veg-cuisine",
+    title: "Family & Couple Hotel in Kasol: A Memorable Stay at Mid Orchard",
+    date: "September 30, 2024",
+    excerpt: "Family & Couple Hotel in Kasol: A Memorable Stay at Mid Orchard",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img3_wcox61.jpg",
+    slug: "couple-friendly-hotel-in-kasol",
     content: [
       {
-        subheading: "A Haven for Vegetarian Delights",
+        subheading: "Family Trip to Kasol",
         text: [
-          "Hotel Mid Orchard proudly holds the distinction of being the only pure vegetarian hotel in Kasol. For travelers who cherish vegetarianism as not just a choice but a way of life, this charming retreat offers a sanctuary where dietary preferences align seamlessly with cultural values."
+          "If you're looking for a family hotel in Kasol that combines comfort and convenience, look no further than Mid Orchard. Nestled in the heart of Kasol’s scenic beauty and close to the Parvati River, this hotel provides the perfect retreat for families and couples alike. Offering the best of both worlds—access to nature and modern amenities—Mid Orchard ensures a hassle-free and relaxing experience for all its guests, making it a top choice for a family or couple trip in Kasol."
         ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787229/img2_vgx6k2.jpg"
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg"
       },
       {
-        subheading: "Beyond Food: An Enlightened Culinary Journey",
+        subheading: "Why Mid Orchard is the Best Hotel for Couples and Families in Kasol",
         text: [
-          "More than just a place to dine, Hotel Mid Orchard cultivates an atmosphere where every meal is an enriching experience. The dishes served here are not merely culinary delights but a reflection of the philosophy that food nourishes not just the body, but also the soul. The pure veg food in Kasol offered at Hotel Mid Orchard ensures that every meal is a celebration of vegetarian cuisine."
-        ]
+          "When searching for a hotel for couples in Kasol, privacy and a romantic atmosphere are essential. Mid Orchard ticks all the boxes, offering cozy, well-designed rooms that provide the perfect backdrop for a peaceful and intimate stay. For families, the hotel’s spacious accommodations and family-friendly amenities make it one of the best family hotels in Kasol. Enjoy the tranquility of this PURE vegetarian property, surrounded by lush greenery, and take advantage of its proximity as a Kasol hotel with a river view, allowing for serene moments and family time by the water."
+        ],
       },
       {
-        subheading: "Unparalleled Hospitality",
-        text: "Beyond its culinary offerings, Hotel Mid Orchard extends warm hospitality that makes every guest feel like family. From the moment you arrive, you're welcomed into a space where comfort meets conscientious living, ensuring that your stay is not just pleasant but memorable. Experience the best vegetarian food in Kasol while enjoying the warmth and comfort of Hotel Mid Orchard.",
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722070994/IMG_0497_1_ek2ycd.jpg"
+        subheading: "Modern Amenities That Make This the Best Family Hotel Kasol Offers",
+        text: [
+          "Mid Orchard prides itself on providing top-notch amenities. From private secure parking to trained staff available 24/7, this family hotel in Kasol ensures a comfortable and worry-free stay. You can also enjoy room service, daily housekeeping with crisp white linens, and a multi-cuisine restaurant offering a variety of delicious meals. These modern conveniences make it the ideal choice for both families and couples seeking a relaxing getaway, especially for those planning a Kasol family trip."
+        ],
+        image : "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img2_qqdoj2.jpg"
       },
       {
-        subheading: "Plan Your Stay",
-        text: "Ready to embark on a journey of culinary discovery and cultural immersion? Book your stay at Hotel Mid Orchard today and immerse yourself in the essence of vegetarianism amidst the breathtaking beauty of Kasol. As the only pure veg hotel, we promise an unforgettable experience."
+        subheading: "Explore Kasol with Ease: Accessibility and Travel Help Desk",
+        text: [
+          "Conveniently located near the main road, Mid Orchard provides easy access to local attractions and is a top-rated Kasol hotel near the river. The hotel for families in Kasol also offers a travel help desk, ensuring you can plan your local sightseeing and adventures without hassle. Whether you're trekking or simply exploring the local markets, the team at Mid Orchard is ready to assist in making your Kasol family trip truly memorable."
+        ],
+      },
+      {
+        subheading: "Book Your Stay at the Best Family and Couple Hotel in Kasol",
+        text: [
+          "Ready to experience the serenity of Kasol with your loved ones? Mid Orchard is not just another couple and family hotel in Kasol—it’s an experience of comfort, convenience, and charm. Whether you're a couple seeking a romantic retreat or a family looking for a peaceful vacation, this hotel has everything you need for an unforgettable stay. Book your stay today and make the most of your Kasol family trip by staying at this charming Kasol hotel near the river!"
+        ],
+      },
+      
+    ]
+  },
+
+  {
+    title: "Private Villa Near Manali for Family & Couples with Exclusive Butler Service",
+    date: "September 20, 2024",
+    excerpt: "Aangan villa, perfect retreat for couples and families",
+    imageUrl: "https://lh3.googleusercontent.com/p/AF1QipPqVLDMEMjIanIx1wXn1siDQUT2X2meYAdMD_IT=s1360-w1360-h1020",
+    slug: "couple-friendly-villa-near-manali",
+    content: [
+      {
+        subheading: "Luxury Private Villa Near Manali for Families and Couples",
+        text: [
+          "Looking for a private villa near Manali that offers a blend of luxury and nature? This villa is perfect for families and couples seeking a serene escape. Nestled in apple and plum orchards, it offers stunning views of valleys, mountains, and paragliders, providing a peaceful retreat from the busy tourist areas of Manali."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
+      },
+      {
+        subheading: "Modern Villa Near Manali with Premium Wood and Stone Construction",
+        text: [
+          "This modern villa near Manali is built using high-quality wood and stone, ensuring both durability and a natural feel. Inside, the villa features warm and cozy interiors with wooden flooring, ceilings, and furniture, creating an inviting atmosphere. With large living spaces, a fireplace, and huge balconies, the villa offers comfort and charm in every corner, making it the ideal destination for your mountain retreat."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img5_kymst4.jpg"
+      },
+      {
+        subheading: "Villa with Private Butler Service for Families and Couples",
+        text: [
+          "One of the standout features of this villa near Manali for family and couples is the exclusive butler service. Whether you need help with preparing meals, room service, or organizing personalized activities, the butler is dedicated to making your stay stress-free and enjoyable. This level of personalized service ensures that your time at the villa is nothing short of luxurious."
+        ],
+        
+      },
+      {
+        subheading: "Scenic Villa Near Manali Offering Peaceful Location and Valley Views",
+        text: [
+          "Located in a peaceful setting, this scenic villa near Manali is perfect for those looking to unwind and reconnect with nature. With breathtaking views of the surrounding valley and mountains, the villa offers a peaceful environment while still being close to the main attractions. Whether you’re watching paragliders soar through the sky or relaxing on the large balcony, the tranquility of this villa is unmatched."
+        ],
+      },
+      {
+        subheading: "Sightseeing Assistance at a Private Villa Near Manali",
+        text: [
+          "To make the most of your Manali villa stay, the villa also offers sightseeing assistance. Whether you're interested in exploring the local temples, hiking through the beautiful terrain, or simply enjoying the sights of Manali, the villa staff is ready to help you organize memorable experiences. This service ensures that your time in Manali is as fulfilling as it is relaxing."
+        ],
+      },
+      {
+        subheading: "Book Your Stay at the Best Private Villa Near Manali for Families and Couples",
+        text: [
+          "If you're seeking a luxurious and peaceful escape, this private villa near Manali is the perfect choice. With exclusive butler service, modern amenities, and stunning views, it’s ideal for both families and couples looking for an unforgettable retreat. Book your stay today and experience the magic of Manali like never before!"
+        ],
+      },
+      
+    ]
+  },
+
+  {
+    title: "Aangan 3 BHK Villa near Manali: The Ultimate Luxury Retreat",
+    date: "August 15, 2024",
+    excerpt: "A Luxury Villa amidst orchards",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img2_brhgdh.jpg",
+    slug: "aangan-villa-near-manali",
+    content: [
+      {
+        subheading: "Experience the Best Luxury Villas in Manali",
+        text: [
+          "Looking for a cozy and spacious retreat for your family near Manali? Aangan 3 BHK Villa offers the perfect blend of comfort and charm, making it the ideal choice for family get-togethers. This luxury villa in Manali is designed to provide a relaxing and enjoyable experience for all."
+        ],
+      },
+      {
+        subheading: "Discover Modern Amenities and Comfort in Private Villas in Manali",
+        text: [
+          "With three beautifully furnished bedrooms, Aangan Villa provides ample space for everyone in your family to unwind. The living area features a warm fireplace, perfect for family gatherings or simply relaxing after a day of exploration. The villa also includes a private modern kitchen, ideal for cooking meals together. Plus, the attic wooden room adds a unique touch, making it a great space for kids or a quiet retreat."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
+      },
+      {
+        subheading: "Relax in the Best Luxury Villas with Mountain Views in Manali",
+        text: [
+          "Indulge in a luxurious soak in the bathtub after a day of adventure or savor the serene atmosphere of this villa in Manali for rent. The attic wooden room offers a charming space for relaxation, blending rustic charm with modern comforts. Surrounded by lush apple and plum orchards, Aangan Villa provides breathtaking views and a peaceful environment, enhancing your stay with natural beauty."
+        ],
+      },
+      {
+        subheading: "Ideal Villas in Manali for Couples and Families",
+        text: [
+          "Whether you’re looking for a villa in Manali for couples or a family-friendly villa near Manali, Aangan 3 BHK Villa offers a versatile setting for all. For couples, the intimate and serene surroundings provide the perfect backdrop for a romantic escape. For families, the spacious accommodations and luxurious amenities ensure a comfortable and memorable stay."
+        ],
+      },
+      {
+        subheading: "Book the Best Private Villas in Manali for Your Next Getaway",
+        text: [
+          "Don’t miss out on staying at the best villa in Manali. Whether you’re planning a family vacation or a romantic retreat, Aangan 3 BHK Villa combines comfort, luxury, and natural beauty. Reserve your stay today and experience one of the top private villas in Manali."
+        ],
+      },
+    ]
+  },
+
+  {
+    title: "Hotel Mid Orchard Kasol: The Ultimate Dog-Friendly Riverside Retreat",
+    date: "August 2, 2024",
+    excerpt: "A Pet-Friendly retreat perfect for your next trip to Kasol",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg",
+    slug: "mid-orchard-pet-friendly-retreat",
+    content: [
+      {
+        subheading: "Dog-Friendly Resorts Near Me: Your Ideal Kasol Getaway",
+        text: [
+          "When searching for the perfect escape where your pet is just as welcome as you are, Hotel Mid Orchard Kasol tops the list of dog-friendly resorts near me. This serene riverside hotel, nestled along the Parvati River, is a prime destination for pet lovers seeking both comfort and adventure in the heart of Kasol."
+        ],
+      },
+      {
+        subheading: "Pet-Friendly Hotels in Kasol: A Riverside Stay You’ll Both Love",
+        text: [
+          "Looking for pet-friendly hotels in Kasol? Hotel Mid Orchard offers everything you need for a memorable stay with your furry friend. From the tranquil riverside setting to the welcoming atmosphere, this hotel ensures that both you and your pet feel right at home, making it a standout among Kasol pet-friendly stays."
+        ],
+      },
+      {
+        subheading: "Kasol Dog-Friendly Accommodations with Riverside Views",
+        text: [
+          "Wake up to the soothing sounds of the Parvati River, with the majestic Himalayas as your backdrop. As one of the top Kasol dog-friendly accommodations, Hotel Mid Orchard offers rooms with private balconies, allowing you and your pet to enjoy the serene river views. The combination of modern amenities and a pet-welcoming environment makes it one of the best pet-friendly riverside hotels in Himachal."
+        ],
+      },
+      {
+        subheading: "Hotels for Pets in Kasol: All the Comforts You Need",
+        text: [
+          "Hotel Mid Orchard Kasol goes beyond being just a dog-friendly resort—it’s a place where pets are pampered just as much as their owners. With easy access to pet food, cozy rooms, 24/7 hot water, and secure parking, every detail is taken care of to ensure a hassle-free stay. Whether you’re looking to relax or explore, this is one of the top hotels for pets in Kasol."
+        ],
+      },
+      {
+        subheading: "Best Riverside Hotels in Kasol for Pets: Experience the Ultimate Stay",
+        text: [
+          "Imagine spending your days exploring the scenic beauty of Kasol and your evenings unwinding on your private balcony, with your pet by your side. As one of the best riverside hotels in Kasol for pets, Hotel Mid Orchard offers the perfect blend of nature and comfort. And if you need some time to yourself, our pet babysitting services ensure your furry friend is in good hands."
+        ],
+      },
+      {
+        subheading: "Kasol Hotels: Book Your Pet-Friendly Riverside Escape Today",
+        text: [
+          "Why settle for less when you can have the best? Make your reservation at Hotel Mid Orchard Kasol, one of the top dog-friendly resorts near you. Whether you’re planning a quiet retreat or an adventure-filled holiday, this Kasol hotel is ready to welcome you and your pet for an unforgettable stay."
+        ],
       }
     ]
   },
+
+  {
+    title: "Best Secluded Stay in Manali: Aangan Villa and Homes by Mid Orchard",
+    date: "July 24, 2024",
+    excerpt: " If you're seeking a serene and private retreat, finding the right place to stay is crucial. Aangan Villa & Homes is just the place",
+    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082193/img3_q58lox.jpg",
+    slug: "best-secluded-stay-manali",
+    content: [
+      {
+        subheading: "Tranquil and Secluded Location",
+        text: [
+          "Aangan Villa and Homes by Mid Orchard offers an unparalleled secluded experience. Nestled amidst the breathtaking landscapes of Manali, this property provides a peaceful retreat away from the crowded tourist spots. The villas and homes are strategically located to ensure complete privacy, making it the best homestay in Manali for those seeking a quiet escape."
+        ]
+      },
+      {
+        subheading: "Luxurious and Comfortable Accommodations",
+        text: [
+          "The accommodations at Aangan Villa and Homes are designed to offer the utmost comfort and luxury. Each villa and home is tastefully furnished, blending modern amenities with traditional Himachali architecture. Spacious bedrooms, cozy living areas, and well-equipped kitchens ensure a comfortable stay for families, couples, or solo travelers. This makes it an ideal choice for a homestay in Manali with a kitchen and those looking for a long-term stay homestay in Manali."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082145/img10_rir5fo.jpg"
+      },
+      {
+        subheading: "Stunning Views and Scenic Beauty",
+        text: [
+          "One of the highlights of staying at Aangan Villa and Homes is the breathtaking views it offers. Wake up to the sight of snow-capped mountains, lush valleys, and the serene Beas River. The property’s elevated location provides panoramic views that are sure to leave you mesmerized, making it a top choice for a mountain view homestay in Manali."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080680/img8_bvrosw.jpg"
+      },
+      {
+        subheading: "Proximity to Manali's Attractions",
+        text: [
+          "While Aangan Villa and Homes offers a secluded retreat, it is also conveniently located close to Manali’s popular attractions. Whether you want to explore the Hadimba Temple, visit the Solang Valley for adventure sports, or take a leisurely stroll on the Mall Road, you’re just a short drive away from these activities. The property’s location allows you to enjoy the best of both worlds – peace and tranquility at your stay and easy access to Manali’s vibrant culture.",
+          "If you’re looking for the best secluded stay or Airbnb near Manali, Aangan Villa and Homes by Mid Orchard is your ideal choice. With its tranquil location, luxurious accommodations, stunning views, personalized hospitality, and eco-friendly practices, it offers a perfect retreat for those seeking peace and rejuvenation. Book your stay at Aangan Villa and Homes and experience the serene beauty of Manali like never before."
+        ],
+      }
+    ]
+  },
+
   {
     title: "Top 3 Riverside Hotels in Kasol",
     date: "July 15, 2024",
@@ -111,125 +297,36 @@ export const blogPosts = [
       }
     ]
   },
+
   {
-    title: "Best Secluded Stay in Manali: Aangan Villa and Homes by Mid Orchard",
-    date: "July 24, 2024",
-    excerpt: " If you're seeking a serene and private retreat, finding the right place to stay is crucial. Aangan Villa & Homes is just the place",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082193/img3_q58lox.jpg",
-    slug: "best-secluded-stay-manali",
+    title: "The Spiritual Essence of Pure Veg Cuisine at Hotel Mid Orchard, Kasol",
+    date: "July 8, 2024",
+    excerpt: "The Only Pure Vegetarian Hotel in Kasol",
+    imageUrl: "https://res.cloudinary.com/dk3qqzafg/image/upload/v1723546798/pic_hykq2k.jpg",
+    slug: "spiritual-essence-pure-veg-cuisine",
     content: [
       {
-        subheading: "Tranquil and Secluded Location",
+        subheading: "A Haven for Vegetarian Delights",
         text: [
-          "Aangan Villa and Homes by Mid Orchard offers an unparalleled secluded experience. Nestled amidst the breathtaking landscapes of Manali, this property provides a peaceful retreat away from the crowded tourist spots. The villas and homes are strategically located to ensure complete privacy, making it the best homestay in Manali for those seeking a quiet escape."
+          "Hotel Mid Orchard proudly holds the distinction of being the only pure vegetarian hotel in Kasol. For travelers who cherish vegetarianism as not just a choice but a way of life, this charming retreat offers a sanctuary where dietary preferences align seamlessly with cultural values."
+        ],
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787229/img2_vgx6k2.jpg"
+      },
+      {
+        subheading: "Beyond Food: An Enlightened Culinary Journey",
+        text: [
+          "More than just a place to dine, Hotel Mid Orchard cultivates an atmosphere where every meal is an enriching experience. The dishes served here are not merely culinary delights but a reflection of the philosophy that food nourishes not just the body, but also the soul. The pure veg food in Kasol offered at Hotel Mid Orchard ensures that every meal is a celebration of vegetarian cuisine."
         ]
       },
       {
-        subheading: "Luxurious and Comfortable Accommodations",
-        text: [
-          "The accommodations at Aangan Villa and Homes are designed to offer the utmost comfort and luxury. Each villa and home is tastefully furnished, blending modern amenities with traditional Himachali architecture. Spacious bedrooms, cozy living areas, and well-equipped kitchens ensure a comfortable stay for families, couples, or solo travelers. This makes it an ideal choice for a homestay in Manali with a kitchen and those looking for a long-term stay homestay in Manali."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082145/img10_rir5fo.jpg"
+        subheading: "Unparalleled Hospitality",
+        text: "Beyond its culinary offerings, Hotel Mid Orchard extends warm hospitality that makes every guest feel like family. From the moment you arrive, you're welcomed into a space where comfort meets conscientious living, ensuring that your stay is not just pleasant but memorable. Experience the best vegetarian food in Kasol while enjoying the warmth and comfort of Hotel Mid Orchard.",
+        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722070994/IMG_0497_1_ek2ycd.jpg"
       },
       {
-        subheading: "Stunning Views and Scenic Beauty",
-        text: [
-          "One of the highlights of staying at Aangan Villa and Homes is the breathtaking views it offers. Wake up to the sight of snow-capped mountains, lush valleys, and the serene Beas River. The property’s elevated location provides panoramic views that are sure to leave you mesmerized, making it a top choice for a mountain view homestay in Manali."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080680/img8_bvrosw.jpg"
-      },
-      {
-        subheading: "Proximity to Manali's Attractions",
-        text: [
-          "While Aangan Villa and Homes offers a secluded retreat, it is also conveniently located close to Manali’s popular attractions. Whether you want to explore the Hadimba Temple, visit the Solang Valley for adventure sports, or take a leisurely stroll on the Mall Road, you’re just a short drive away from these activities. The property’s location allows you to enjoy the best of both worlds – peace and tranquility at your stay and easy access to Manali’s vibrant culture.",
-          "If you’re looking for the best secluded stay or Airbnb near Manali, Aangan Villa and Homes by Mid Orchard is your ideal choice. With its tranquil location, luxurious accommodations, stunning views, personalized hospitality, and eco-friendly practices, it offers a perfect retreat for those seeking peace and rejuvenation. Book your stay at Aangan Villa and Homes and experience the serene beauty of Manali like never before."
-        ],
+        subheading: "Plan Your Stay",
+        text: "Ready to embark on a journey of culinary discovery and cultural immersion? Book your stay at Hotel Mid Orchard today and immerse yourself in the essence of vegetarianism amidst the breathtaking beauty of Kasol. As the only pure veg hotel, we promise an unforgettable experience."
       }
-    ]
-  },
-  {
-    title: "Hotel Mid Orchard Kasol: The Ultimate Dog-Friendly Riverside Retreat",
-    date: "August 2, 2024",
-    excerpt: "A Pet-Friendly retreat perfect for your next trip to Kasol",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg",
-    slug: "mid-orchard-pet-friendly-retreat",
-    content: [
-      {
-        subheading: "Dog-Friendly Resorts Near Me: Your Ideal Kasol Getaway",
-        text: [
-          "When searching for the perfect escape where your pet is just as welcome as you are, Hotel Mid Orchard Kasol tops the list of dog-friendly resorts near me. This serene riverside hotel, nestled along the Parvati River, is a prime destination for pet lovers seeking both comfort and adventure in the heart of Kasol."
-        ],
-      },
-      {
-        subheading: "Pet-Friendly Hotels in Kasol: A Riverside Stay You’ll Both Love",
-        text: [
-          "Looking for pet-friendly hotels in Kasol? Hotel Mid Orchard offers everything you need for a memorable stay with your furry friend. From the tranquil riverside setting to the welcoming atmosphere, this hotel ensures that both you and your pet feel right at home, making it a standout among Kasol pet-friendly stays."
-        ],
-      },
-      {
-        subheading: "Kasol Dog-Friendly Accommodations with Riverside Views",
-        text: [
-          "Wake up to the soothing sounds of the Parvati River, with the majestic Himalayas as your backdrop. As one of the top Kasol dog-friendly accommodations, Hotel Mid Orchard offers rooms with private balconies, allowing you and your pet to enjoy the serene river views. The combination of modern amenities and a pet-welcoming environment makes it one of the best pet-friendly riverside hotels in Himachal."
-        ],
-      },
-      {
-        subheading: "Hotels for Pets in Kasol: All the Comforts You Need",
-        text: [
-          "Hotel Mid Orchard Kasol goes beyond being just a dog-friendly resort—it’s a place where pets are pampered just as much as their owners. With easy access to pet food, cozy rooms, 24/7 hot water, and secure parking, every detail is taken care of to ensure a hassle-free stay. Whether you’re looking to relax or explore, this is one of the top hotels for pets in Kasol."
-        ],
-      },
-      {
-        subheading: "Best Riverside Hotels in Kasol for Pets: Experience the Ultimate Stay",
-        text: [
-          "Imagine spending your days exploring the scenic beauty of Kasol and your evenings unwinding on your private balcony, with your pet by your side. As one of the best riverside hotels in Kasol for pets, Hotel Mid Orchard offers the perfect blend of nature and comfort. And if you need some time to yourself, our pet babysitting services ensure your furry friend is in good hands."
-        ],
-      },
-      {
-        subheading: "Kasol Hotels: Book Your Pet-Friendly Riverside Escape Today",
-        text: [
-          "Why settle for less when you can have the best? Make your reservation at Hotel Mid Orchard Kasol, one of the top dog-friendly resorts near you. Whether you’re planning a quiet retreat or an adventure-filled holiday, this Kasol hotel is ready to welcome you and your pet for an unforgettable stay."
-        ],
-      }
-    ]
-  },
-  {
-    title: "Aangan 3 BHK Villa near Manali: The Ultimate Luxury Retreat",
-    date: "August 15, 2024",
-    excerpt: "A Luxury Villa amidst orchards",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img2_brhgdh.jpg",
-    slug: "aangan-villa-near-manali",
-    content: [
-      {
-        subheading: "Experience the Best Luxury Villas in Manali",
-        text: [
-          "Looking for a cozy and spacious retreat for your family near Manali? Aangan 3 BHK Villa offers the perfect blend of comfort and charm, making it the ideal choice for family get-togethers. This luxury villa in Manali is designed to provide a relaxing and enjoyable experience for all."
-        ],
-      },
-      {
-        subheading: "Discover Modern Amenities and Comfort in Private Villas in Manali",
-        text: [
-          "With three beautifully furnished bedrooms, Aangan Villa provides ample space for everyone in your family to unwind. The living area features a warm fireplace, perfect for family gatherings or simply relaxing after a day of exploration. The villa also includes a private modern kitchen, ideal for cooking meals together. Plus, the attic wooden room adds a unique touch, making it a great space for kids or a quiet retreat."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
-      },
-      {
-        subheading: "Relax in the Best Luxury Villas with Mountain Views in Manali",
-        text: [
-          "Indulge in a luxurious soak in the bathtub after a day of adventure or savor the serene atmosphere of this villa in Manali for rent. The attic wooden room offers a charming space for relaxation, blending rustic charm with modern comforts. Surrounded by lush apple and plum orchards, Aangan Villa provides breathtaking views and a peaceful environment, enhancing your stay with natural beauty."
-        ],
-      },
-      {
-        subheading: "Ideal Villas in Manali for Couples and Families",
-        text: [
-          "Whether you’re looking for a villa in Manali for couples or a family-friendly villa near Manali, Aangan 3 BHK Villa offers a versatile setting for all. For couples, the intimate and serene surroundings provide the perfect backdrop for a romantic escape. For families, the spacious accommodations and luxurious amenities ensure a comfortable and memorable stay."
-        ],
-      },
-      {
-        subheading: "Book the Best Private Villas in Manali for Your Next Getaway",
-        text: [
-          "Don’t miss out on staying at the best villa in Manali. Whether you’re planning a family vacation or a romantic retreat, Aangan 3 BHK Villa combines comfort, luxury, and natural beauty. Reserve your stay today and experience one of the top private villas in Manali."
-        ],
-      },
     ]
   },
 ];
