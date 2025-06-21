@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="border-t border-slate-700 pt-6">
           <div className="flex flex-col items-center text-center space-y-4">
             <p className="text-slate-400 text-sm">
-              © 2024 Mid Orchard. All rights reserved.
+              © 2025 Mid Orchard. All rights reserved.
             </p>
             <div className="text-slate-400 text-sm max-w-xs md:max-w-none mx-auto">
               <div className="mb-1">Developed and Managed by</div>
