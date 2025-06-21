@@ -126,7 +126,7 @@ function MyComponent() {
         const propToSend = {
           roomName: "Family Suite",
           logo: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png",
-          background: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720079837/img4_k8gwkv.jpg"
+          background: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img3_wcox61.jpg"
         };
 
         navigate('/ThankYou', { state: propToSend });
@@ -172,7 +172,7 @@ function MyComponent() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen bg-cover bg-center" style={{backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081150/img6_g67zpd.jpg')"}}>
+    <main className="flex flex-col min-h-screen bg-cover bg-center" style={{backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img3_wcox61.jpg')"}}>
       <div className="bg-black bg-opacity-50 min-h-screen backdrop-blur-sm">
         <header className="flex flex-col items-center p-4 sm:p-8 text-white">
           <div onClick={handleLogo} className="cursor-pointer">

@@ -33,17 +33,11 @@ function Host() {
       location: "Kasol",
       description: "B.Tech graduate in ECE with professional experience at Ericsson Global India, Noida (2014-2016). Since 2016, I have specialized in the tourism industry, developing and managing PAN India travel packages and operations for destinations such as Andaman, Kerala, Sikkim, Meghalaya, Himachal Pradesh, Uttarakhand, as well as international locations like Singapore, Maldives, Bali, and Dubai. In 2019, I established and presently oversee the operations of three hospitality properties located in Himachal Pradesh.",
       imageSrc: 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1721989532/Abhishek_photo_fdkxcc.jpg'
-    },
-    {
-      name: "Sahil Bachan",
-      location: "Manali",
-      description: "Former engineer turned successful hospitality entrepreneur from Dobhi, Kullu, HP. After shifting from IT in 2016, I founded 'Camping Kona' in 2015, offering luxury camps. In 2020, I co-founded Mid Orchard, known for cottages, hostels, and hotels, where we're cherished as 'Host and Dost.' Combining technical expertise with local charm, I'm passionate about creating memorable stays in Himachal Pradesh.",
-      imageSrc: 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1721989619/Sahil_photo_cf2w3m.jpg'
     }
   ];
 
   return (
-    <main className="flex flex-col justify-center bg-slate-800 bg-cover bg-center" >
+    <main className="flex flex-col justify-center bg-[#162237] bg-cover bg-center bg-opacity-0" >
       <div className="flex overflow-hidden relative flex-col px-3 sm:px-4 lg:px-6 pt-5 sm:pt-7 lg:pt-10 pb-10 sm:pb-12 lg:pb-16 w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[800px]">
         <h1 className="relative self-center text-2xl sm:text-3xl lg:text-5xl font-semibold text-white text-center">
           Know more about your Hosts
@@ -51,7 +45,6 @@ function Host() {
         <img loading="lazy" src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082855/underline_hilihk.png" alt="" className="self-center max-w-full aspect-[8.33] fill-teal-400 w-[150px] sm:w-[200px] lg:w-[284px] mt-1 sm:mt-2 lg:mt-3 transition-all duration-300 hover:scale-110" />
         
         <HostProfile {...hosts[0]} isReversed={false} />
-        <HostProfile {...hosts[1]} isReversed={true} />
       </div>
     </main>
   );

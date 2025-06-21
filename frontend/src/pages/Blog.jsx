@@ -73,98 +73,6 @@ export const blogPosts = [
       
     ]
   },
-
-  {
-    title: "Private Villa Near Manali for Family & Couples with Exclusive Butler Service",
-    date: "September 20, 2024",
-    excerpt: "Aangan villa, perfect retreat for couples and families",
-    imageUrl: "https://lh3.googleusercontent.com/p/AF1QipPqVLDMEMjIanIx1wXn1siDQUT2X2meYAdMD_IT=s1360-w1360-h1020",
-    slug: "couple-friendly-villa-near-manali",
-    content: [
-      {
-        subheading: "Luxury Private Villa Near Manali for Families and Couples",
-        text: [
-          "Looking for a private villa near Manali that offers a blend of luxury and nature? This villa is perfect for families and couples seeking a serene escape. Nestled in apple and plum orchards, it offers stunning views of valleys, mountains, and paragliders, providing a peaceful retreat from the busy tourist areas of Manali."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
-      },
-      {
-        subheading: "Modern Villa Near Manali with Premium Wood and Stone Construction",
-        text: [
-          "This modern villa near Manali is built using high-quality wood and stone, ensuring both durability and a natural feel. Inside, the villa features warm and cozy interiors with wooden flooring, ceilings, and furniture, creating an inviting atmosphere. With large living spaces, a fireplace, and huge balconies, the villa offers comfort and charm in every corner, making it the ideal destination for your mountain retreat."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img5_kymst4.jpg"
-      },
-      {
-        subheading: "Villa with Private Butler Service for Families and Couples",
-        text: [
-          "One of the standout features of this villa near Manali for family and couples is the exclusive butler service. Whether you need help with preparing meals, room service, or organizing personalized activities, the butler is dedicated to making your stay stress-free and enjoyable. This level of personalized service ensures that your time at the villa is nothing short of luxurious."
-        ],
-        
-      },
-      {
-        subheading: "Scenic Villa Near Manali Offering Peaceful Location and Valley Views",
-        text: [
-          "Located in a peaceful setting, this scenic villa near Manali is perfect for those looking to unwind and reconnect with nature. With breathtaking views of the surrounding valley and mountains, the villa offers a peaceful environment while still being close to the main attractions. Whether you’re watching paragliders soar through the sky or relaxing on the large balcony, the tranquility of this villa is unmatched."
-        ],
-      },
-      {
-        subheading: "Sightseeing Assistance at a Private Villa Near Manali",
-        text: [
-          "To make the most of your Manali villa stay, the villa also offers sightseeing assistance. Whether you're interested in exploring the local temples, hiking through the beautiful terrain, or simply enjoying the sights of Manali, the villa staff is ready to help you organize memorable experiences. This service ensures that your time in Manali is as fulfilling as it is relaxing."
-        ],
-      },
-      {
-        subheading: "Book Your Stay at the Best Private Villa Near Manali for Families and Couples",
-        text: [
-          "If you're seeking a luxurious and peaceful escape, this private villa near Manali is the perfect choice. With exclusive butler service, modern amenities, and stunning views, it’s ideal for both families and couples looking for an unforgettable retreat. Book your stay today and experience the magic of Manali like never before!"
-        ],
-      },
-      
-    ]
-  },
-
-  {
-    title: "Aangan 3 BHK Villa near Manali: The Ultimate Luxury Retreat",
-    date: "August 15, 2024",
-    excerpt: "A Luxury Villa amidst orchards",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img2_brhgdh.jpg",
-    slug: "aangan-villa-near-manali",
-    content: [
-      {
-        subheading: "Experience the Best Luxury Villas in Manali",
-        text: [
-          "Looking for a cozy and spacious retreat for your family near Manali? Aangan 3 BHK Villa offers the perfect blend of comfort and charm, making it the ideal choice for family get-togethers. This luxury villa in Manali is designed to provide a relaxing and enjoyable experience for all."
-        ],
-      },
-      {
-        subheading: "Discover Modern Amenities and Comfort in Private Villas in Manali",
-        text: [
-          "With three beautifully furnished bedrooms, Aangan Villa provides ample space for everyone in your family to unwind. The living area features a warm fireplace, perfect for family gatherings or simply relaxing after a day of exploration. The villa also includes a private modern kitchen, ideal for cooking meals together. Plus, the attic wooden room adds a unique touch, making it a great space for kids or a quiet retreat."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg"
-      },
-      {
-        subheading: "Relax in the Best Luxury Villas with Mountain Views in Manali",
-        text: [
-          "Indulge in a luxurious soak in the bathtub after a day of adventure or savor the serene atmosphere of this villa in Manali for rent. The attic wooden room offers a charming space for relaxation, blending rustic charm with modern comforts. Surrounded by lush apple and plum orchards, Aangan Villa provides breathtaking views and a peaceful environment, enhancing your stay with natural beauty."
-        ],
-      },
-      {
-        subheading: "Ideal Villas in Manali for Couples and Families",
-        text: [
-          "Whether you’re looking for a villa in Manali for couples or a family-friendly villa near Manali, Aangan 3 BHK Villa offers a versatile setting for all. For couples, the intimate and serene surroundings provide the perfect backdrop for a romantic escape. For families, the spacious accommodations and luxurious amenities ensure a comfortable and memorable stay."
-        ],
-      },
-      {
-        subheading: "Book the Best Private Villas in Manali for Your Next Getaway",
-        text: [
-          "Don’t miss out on staying at the best villa in Manali. Whether you’re planning a family vacation or a romantic retreat, Aangan 3 BHK Villa combines comfort, luxury, and natural beauty. Reserve your stay today and experience one of the top private villas in Manali."
-        ],
-      },
-    ]
-  },
-
   {
     title: "Hotel Mid Orchard Kasol: The Ultimate Dog-Friendly Riverside Retreat",
     date: "August 2, 2024",
@@ -210,44 +118,6 @@ export const blogPosts = [
       }
     ]
   },
-
-  {
-    title: "Best Secluded Stay in Manali: Aangan Villa and Homes by Mid Orchard",
-    date: "July 24, 2024",
-    excerpt: " If you're seeking a serene and private retreat, finding the right place to stay is crucial. Aangan Villa & Homes is just the place",
-    imageUrl: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082193/img3_q58lox.jpg",
-    slug: "best-secluded-stay-manali",
-    content: [
-      {
-        subheading: "Tranquil and Secluded Location",
-        text: [
-          "Aangan Villa and Homes by Mid Orchard offers an unparalleled secluded experience. Nestled amidst the breathtaking landscapes of Manali, this property provides a peaceful retreat away from the crowded tourist spots. The villas and homes are strategically located to ensure complete privacy, making it the best homestay in Manali for those seeking a quiet escape."
-        ]
-      },
-      {
-        subheading: "Luxurious and Comfortable Accommodations",
-        text: [
-          "The accommodations at Aangan Villa and Homes are designed to offer the utmost comfort and luxury. Each villa and home is tastefully furnished, blending modern amenities with traditional Himachali architecture. Spacious bedrooms, cozy living areas, and well-equipped kitchens ensure a comfortable stay for families, couples, or solo travelers. This makes it an ideal choice for a homestay in Manali with a kitchen and those looking for a long-term stay homestay in Manali."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082145/img10_rir5fo.jpg"
-      },
-      {
-        subheading: "Stunning Views and Scenic Beauty",
-        text: [
-          "One of the highlights of staying at Aangan Villa and Homes is the breathtaking views it offers. Wake up to the sight of snow-capped mountains, lush valleys, and the serene Beas River. The property’s elevated location provides panoramic views that are sure to leave you mesmerized, making it a top choice for a mountain view homestay in Manali."
-        ],
-        image: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080680/img8_bvrosw.jpg"
-      },
-      {
-        subheading: "Proximity to Manali's Attractions",
-        text: [
-          "While Aangan Villa and Homes offers a secluded retreat, it is also conveniently located close to Manali’s popular attractions. Whether you want to explore the Hadimba Temple, visit the Solang Valley for adventure sports, or take a leisurely stroll on the Mall Road, you’re just a short drive away from these activities. The property’s location allows you to enjoy the best of both worlds – peace and tranquility at your stay and easy access to Manali’s vibrant culture.",
-          "If you’re looking for the best secluded stay or Airbnb near Manali, Aangan Villa and Homes by Mid Orchard is your ideal choice. With its tranquil location, luxurious accommodations, stunning views, personalized hospitality, and eco-friendly practices, it offers a perfect retreat for those seeking peace and rejuvenation. Book your stay at Aangan Villa and Homes and experience the serene beauty of Manali like never before."
-        ],
-      }
-    ]
-  },
-
   {
     title: "Top 3 Riverside Hotels in Kasol",
     date: "July 15, 2024",
@@ -347,10 +217,10 @@ function Blog() {
   const allPostsVisible = visiblePosts >= blogPosts.length;
 
   return (
-    <section ref={blogRef} id="blog-section" className="relative z-10 py-16 bg-slate-800 bg-opacity-10 bg-cover bg-center">
+    <section ref={blogRef} id="blog-section" className="relative z-10 py-16 bg-slate-800 bg-opacity-0 bg-cover bg-center">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-8">Our Blogs</h2>
-        <p className="text-center text-gray-200 mb-12 max-w-2xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white text-center mb-8">Our Blogs</h2>
+        <p className="text-xl sm:text-xl lg:text-2xl text-center text-gray-200 mb-12 max-w-2xl mx-auto">
           Stay updated with our latest news, travel tips, and insider insights to make the most of your stay.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

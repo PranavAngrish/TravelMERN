@@ -15,14 +15,14 @@ function ImageWithOverlay({ src, alt, children, linkTo }) {
   return (
     <div 
       onClick={handleClick} 
-      className="block relative w-full h-[40vh] sm:h-[50vh] overflow-hidden group cursor-pointer"
+      className="bg-slate-800 block relative w-full h-screen overflow-hidden group cursor-pointer"
     >
       <img 
         src={src} 
         alt={alt} 
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 opacity-90" 
       />
-      <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+      <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center p-6 sm:p-8 md:p-12">
         {children}
       </div>
     </div>
@@ -37,21 +37,31 @@ function LocationCard({ iconSrc, title, subtitle }) {
 
   return (
     <div 
-      className="flex flex-col items-start text-white transition-transform duration-300 group-hover:scale-105"
+      className="flex flex-col items-center text-center sm:items-start sm:text-left text-white transition-transform duration-300 group-hover:scale-105 max-w-xs sm:max-w-none"
       onClick={handleClick}
     >
-      <div className="flex items-center">
-        <img src={iconSrc} alt="Location icon" className="w-8 h-8 sm:w-12 sm:h-12 object-contain" />
-        <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold ml-2 sm:ml-3">{title}</span>
+      <div className="flex flex-col sm:flex-row items-center">
+        <img 
+          src={iconSrc} 
+          alt="Location icon" 
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain mb-3 sm:mb-0" 
+        />
+        <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold sm:ml-3 leading-tight">
+          {title}
+        </span>
       </div>
-      {subtitle && <span className="text-sm sm:text-base md:text-lg lg:text-xl -mt-1 ml-10 sm:ml-14">{subtitle}</span>}
+      {subtitle && (
+        <span className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 sm:-mt-1 sm:ml-14 md:ml-16 lg:ml-17 opacity-90">
+          {subtitle}
+        </span>
+      )}
     </div>
   );
 }
 
 function Properties() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col min-h-screen">
       <ImageWithOverlay 
         src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082753/kasol_hfggcj.png"}
         alt="Mountain landscape with lake"
@@ -60,21 +70,6 @@ function Properties() {
         <LocationCard
           iconSrc={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png"}
           title="Mid Orchard Kasol- Riverside"
-        />
-      </ImageWithOverlay>
-      
-      {/* White line separator */}
-      <div className="h-1 bg-white"></div>
-      
-      <ImageWithOverlay 
-        src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082760/manali_bayn3u.png"}
-        alt="Mountain landscape at sunset"
-        linkTo="/aanganhomes-manali"
-      >
-        <LocationCard
-          iconSrc={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082719/aangan_logo_mxdrjf.png"}
-          title="Aangan By Mid Orchard, Manali"
-          subtitle="Villa & Homes"
         />
       </ImageWithOverlay>
     </main>

@@ -13,17 +13,6 @@ const galleryImages = {
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787216/img3_y10ptj.jpg',
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787214/img7_mvopft.jpg',
   ],
-  manali: [
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082193/img3_q58lox.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082156/img11_brvs3x.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082145/img10_rir5fo.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080658/img10_k4ez09.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720080659/img2_kdjj2b.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082187/img14_dgiuom.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img2_brhgdh.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787855/img_fq4jwz.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082198/img5_kymst4.jpg',
-  ],
 };
 
 const Gallery = () => {
@@ -48,27 +37,14 @@ const Gallery = () => {
   return (
     <section
       id="gallery-section"
-      className="relative py-16 px-4 text-white bg-fixed bg-cover bg-center"
-      style={{
-        backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720789199/bg_aed367.webp')",
-      }}
+      className="relative py-16 px-4 text-white bg-fixed bg-cover bg-center bg-opacity-0"
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50" />
+      <div className="absolute inset-0" />
       <div className="relative max-w-6xl mx-auto z-10">
         <h2 className="text-4xl md:text-6xl font-bold text-center mb-12 text-white">
           Our Gallery
         </h2>
         <div className="flex justify-center mb-10">
-          <LocationButton
-            location="Kasol"
-            isActive={activeLocation === 'kasol'}
-            onClick={() => handleLocationChange('kasol')}
-          />
-          <LocationButton
-            location="Manali"
-            isActive={activeLocation === 'manali'}
-            onClick={() => handleLocationChange('manali')}
-          />
         </div>
         <GalleryGrid images={displayedImages} location={activeLocation} />
         {galleryImages[activeLocation].length > 6 && (
