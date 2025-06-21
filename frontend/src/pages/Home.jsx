@@ -127,14 +127,14 @@ function Home() {
     { text: "Contact", targetId: "contact-section" },
   ];
 
-  const scrollToProperties = () => {
+  const navigateToKasol = () => {
     dispatch(setFormData({
       checkInDate: formatDate(checkInDate),
       checkOutDate: formatDate(checkOutDate),
       numberOfGuests: numberOfPeople.toString(),
       loading: false
     }));
-    propertiesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    navigate("/midorchard-kasol");
   };
 
   const handleCheckInChange = (date) => {
@@ -215,7 +215,7 @@ function Home() {
                   handleClick();
                   closeSidebar();
                 }} 
-                className="bg-[#3DBBCD] text-white py-4 px-12 rounded-xl hover:bg-teal-500 transition-colors duration-300 font-medium text-xl"
+                className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
               >
                 LOGIN
               </button>
@@ -225,7 +225,7 @@ function Home() {
                   handleClickLogOut();
                   closeSidebar();
                 }} 
-                className="bg-[#3DBBCD] text-white py-4 px-12 rounded-xl hover:bg-teal-500 transition-colors duration-300 font-medium text-xl"
+                className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
               >
                 LOGOUT
               </button>
@@ -251,11 +251,11 @@ function Home() {
                 <NavItem key={index} text={item.text} targetId={item.targetId} />
               ))}
               {user.currentUser == null ? (
-                <button onClick={handleClick} className="bg-[#3DBBCD] text-white px-6 py-2 rounded-xl hover:bg-teal-500 transition-colors duration-300">
+                <button onClick={handleClick} className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
                   LOGIN
                 </button>
               ) : (
-                <button onClick={handleClickLogOut} className="bg-[#3DBBCD] text-white px-6 py-2 rounded-xl hover:bg-teal-500 transition-colors duration-300">
+                <button onClick={handleClickLogOut} className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
                   LOGOUT
                 </button>
               )}
@@ -289,7 +289,7 @@ function Home() {
             <br />
             Luxurious stay
           </p>
-          <button className="bg-[#3DBBCD] text-white px-4 sm:px-7 py-2 sm:py-2.5 md:px-8 md:py-3 rounded-xl hover:bg-teal-500 text-sm sm:text-base self-start transition-colors duration-300" onClick={scrollToProperties}>
+          <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg self-start" onClick={navigateToKasol}>
             BOOK NOW
           </button>
         </main>
@@ -360,11 +360,11 @@ function Home() {
             </div>
 
             {/* Search Button - Mobile */}
-            <button className="bg-[#3DBBCD] rounded-xl w-full flex items-center justify-center gap-2 hover:bg-teal-500 transition-colors duration-300 py-3" onClick={scrollToProperties}>
+            <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg w-full flex items-center justify-center gap-2" onClick={navigateToKasol}>
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
-              <span className="text-white font-medium text-sm">SEARCH</span>
+              <span className="text-white font-bold">SEARCH</span>
             </button>
           </div>
 
@@ -435,7 +435,7 @@ function Home() {
             </div>
 
             {/* Search Button - Desktop */}
-            <button className="bg-[#3DBBCD] p-3 md:p-4 rounded-xl w-auto flex items-center justify-center gap-2 hover:bg-teal-500 transition-colors duration-300 px-6 md:px-8 min-h-[60px] md:min-h-[70px] lg:min-h-[80px]" onClick={scrollToProperties}>
+            <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg flex items-center justify-center gap-2 min-h-[60px] md:min-h-[70px] lg:min-h-[80px]" onClick={navigateToKasol}>
               <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
