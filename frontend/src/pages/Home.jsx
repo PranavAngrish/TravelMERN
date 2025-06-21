@@ -165,7 +165,7 @@ function Home() {
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}>
-          <div className="absolute inset-0 bg-[#0F1A29] opacity-50"></div>
+          <div className="absolute inset-0 bg-[#0F1A29] opacity-0"></div>
         </div>
       </div>
       

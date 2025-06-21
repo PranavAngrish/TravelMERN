@@ -51,7 +51,7 @@ const Gallery = () => {
           <div className="text-center mt-10">
             <button
               onClick={toggleShowAll}
-              className="bg-[#3DBBCD] hover:bg-teal-500 text-white font-semibold py-2 px-4 rounded-xl transition duration-300 ease-in-out transform hover:scale-105"
+              className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
             >
               {showAll ? 'Show Less' : 'View More'}
             </button>

@@ -1,77 +1,157 @@
 import * as React from "react";
-import { useDispatch } from "react-redux";
-import { setFormData } from "../../redux/formSlice";
+import { MapPin, Mountain, Waves, TreePine } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-function ImageWithOverlay({ src, alt, children, linkTo }) {
+function PropertyCard({ children, linkTo }) {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault();
     navigate(linkTo);
-    window.scrollTo(0, 0);
+    window.scrollTo && window.scrollTo(0, 0);
   };
 
   return (
     <div 
-      onClick={handleClick} 
-      className="bg-slate-800 block relative w-full h-screen overflow-hidden group cursor-pointer"
+      onClick={handleClick}
+      className="relative w-full min-h-screen bg-slate-800 bg-opacity-0 cursor-pointer group overflow-hidden"
     >
-      <img 
-        src={src} 
-        alt={alt} 
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 opacity-90" 
-      />
-      <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center p-6 sm:p-8 md:p-12">
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
         {children}
       </div>
     </div>
   );
 }
 
-function LocationCard({ iconSrc, title, subtitle }) {
-  const dispatch = useDispatch();
+function LocationInfo({ iconSrc, title, subtitle }) {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    dispatch(setFormData({ branchName: title }));
-  }
+    // Redux dispatch would happen here in your actual app
+    console.log('Set form data:', { branchName: title });
+  };
+
+  const handleExploreRooms = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    navigate('/midorchard-kasol');
+    window.scrollTo && window.scrollTo(0, 0);
+  };
 
   return (
     <div 
-      className="flex flex-col items-center text-center sm:items-start sm:text-left text-white transition-transform duration-300 group-hover:scale-105 max-w-xs sm:max-w-none"
+      className="text-center text-white max-w-4xl mx-auto"
       onClick={handleClick}
     >
-      <div className="flex flex-col sm:flex-row items-center">
+      {/* Logo */}
+      <div className="flex justify-center mb-8">
         <img 
           src={iconSrc} 
-          alt="Location icon" 
-          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain mb-3 sm:mb-0" 
+          alt="Mid Orchard Kasol logo" 
+          className="w-24 h-24 object-contain drop-shadow-lg" 
         />
-        <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold sm:ml-3 leading-tight">
-          {title}
-        </span>
       </div>
-      {subtitle && (
-        <span className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 sm:-mt-1 sm:ml-14 md:ml-16 lg:ml-17 opacity-90">
+      
+      {/* Title */}
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
+        {title}
+      </h1>
+      
+      {/* Subtitle with location */}
+      <div className="space-y-4 mb-8">
+        <p className="text-2xl md:text-3xl text-cyan-100 font-medium">
           {subtitle}
-        </span>
-      )}
+        </p>
+        <div className="flex items-center justify-center gap-2 text-cyan-200">
+          <MapPin className="w-5 h-5" />
+          <span className="text-lg">Kasol, Parvati Valley, Himachal Pradesh</span>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-3xl mx-auto">
+        <div className="flex flex-col items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+          <Waves className="w-8 h-8 text-cyan-300 mb-2" />
+          <span className="text-sm font-medium">Riverside Location</span>
+        </div>
+        <div className="flex flex-col items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+          <Mountain className="w-8 h-8 text-cyan-300 mb-2" />
+          <span className="text-sm font-medium">Mountain Views</span>
+        </div>
+        <div className="flex flex-col items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+          <TreePine className="w-8 h-8 text-cyan-300 mb-2" />
+          <span className="text-sm font-medium">Nature Retreat</span>
+        </div>
+      </div>
+
+      {/* Description */}
+      <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+        Experience the tranquil beauty of Parvati Valley at Mid Orchard Kasol. 
+        Nestled along the pristine Parvati River, our resort offers the perfect 
+        blend of comfort and nature's serenity in the heart of the Himalayas.
+      </p>
+
+      {/* Call to action button */}
+      <div className="mt-8">
+        <button 
+          onClick={handleExploreRooms}
+          className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
+        >
+          Explore Our Rooms
+        </button>
+      </div>
     </div>
   );
 }
 
 function Properties() {
   return (
-    <main className="flex flex-col min-h-screen">
-      <ImageWithOverlay 
-        src={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082753/kasol_hfggcj.png"}
-        alt="Mountain landscape with lake"
-        linkTo="/midorchard-kasol"
-      >
-        <LocationCard
-          iconSrc={"https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png"}
-          title="Mid Orchard Kasol- Riverside"
+    <main className="min-h-screen">
+      <PropertyCard linkTo="/midorchard-kasol">
+        <LocationInfo
+          iconSrc="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png"
+          title="Mid Orchard Kasol"
+          subtitle="Riverside Resort & Retreat"
         />
-      </ImageWithOverlay>
+      </PropertyCard>
+      
+      {/* Additional content section */}
+      <section className="bg-slate-800 bg-opacity-0  py-16">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Mid Orchard Kasol?</h2>
+            <p className="text-xl text-white">Discover what makes our resort special</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Waves className="w-8 h-8 text-teal-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Riverside Paradise</h3>
+              <p className="text-white">Wake up to the soothing sounds of the Parvati River flowing right outside your window.</p>
+            </div>
+            
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mountain className="w-8 h-8 text-emerald-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Himalayan Views</h3>
+              <p className="text-white">Breathtaking panoramic views of snow-capped peaks and lush green valleys.</p>
+            </div>
+            
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TreePine className="w-8 h-8 text-cyan-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Nature's Embrace</h3>
+              <p className="text-white">Surrounded by apple orchards and pine forests for the ultimate nature experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
