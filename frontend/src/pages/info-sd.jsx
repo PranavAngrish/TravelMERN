@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, Wifi, Car, Shirt, Home, MapPin, Utensils, Check } from "lucide-react";
 import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 const AmenityItem = ({ icon: Icon, text }) => (
   <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
@@ -84,6 +85,7 @@ const ImageCarousel = ({ images }) => {
 };
 
 function MyComponent() {
+  const navigate = useNavigate();
   const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
   const images = [
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081764/img1_h90jde.jpg",
@@ -104,13 +106,11 @@ function MyComponent() {
   ];
 
   const handleBooking = () => {
-    // Navigate to booking page
-    console.log("Navigate to booking");
+    navigate('/deluxe-room-booking');
   };
 
   const handleHome = () => {
-    // Navigate to home
-    console.log("Navigate to home");
+    navigate('/');
   };
   
   return (

@@ -40,7 +40,7 @@ function Host() {
     <main className="flex flex-col justify-center bg-[#162237] bg-cover bg-center bg-opacity-0" >
       <div className="flex overflow-hidden relative flex-col px-3 sm:px-4 lg:px-6 pt-5 sm:pt-7 lg:pt-10 pb-10 sm:pb-12 lg:pb-16 w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[800px]">
         <h1 className="relative self-center text-2xl sm:text-3xl lg:text-5xl font-semibold text-white text-center">
-          Know more about your Hosts
+          Know more about your Host
         </h1>
         <img loading="lazy" src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082855/underline_hilihk.png" alt="" className="self-center max-w-full aspect-[8.33] fill-teal-400 w-[150px] sm:w-[200px] lg:w-[284px] mt-1 sm:mt-2 lg:mt-3 transition-all duration-300 hover:scale-110" />
         
