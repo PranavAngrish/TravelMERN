@@ -57,7 +57,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.HTTPS_PORT || 3000;
 const cleanupUnverifiedUsers = require("./Utils/cleanupUnverifiedUsers");
 const formRoutes = require("./routes/formSubmit");
 dotenv.config();
