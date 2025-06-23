@@ -12,15 +12,15 @@ const https = require("https");
 const fs = require("fs");
 
 const privateKey = fs.readFileSync(
-  "/etc/letsencrypt/live/process.env.DOMAIN/privkey.pem",
+  `/etc/letsencrypt/live/${process.env.DOMAIN}/privkey.pem`,
   "utf8"
 );
 const certificate = fs.readFileSync(
-  "/etc/letsencrypt/live/process.env.DOMAIN/cert.pem",
+  `/etc/letsencrypt/live/${process.env.DOMAIN}/cert.pem`,
   "utf8"
 );
 const ca = fs.readFileSync(
-  "/etc/letsencrypt/live/process.env.DOMAIN/chain.pem",
+  `/etc/letsencrypt/live/${process.env.DOMAIN}/chain.pem`,
   "utf8"
 );
 
