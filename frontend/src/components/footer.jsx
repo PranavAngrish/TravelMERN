@@ -1,11 +1,15 @@
 import React from "react";
 import { FaPhone, FaEnvelope, FaInstagram } from "react-icons/fa";
 
-const ContactInfo = ({ icon: Icon, text }) => (
-  <div className="flex gap-3 items-center transition-transform transform hover:scale-105 hover:text-teal-400">
-    <Icon className="w-5 h-5 text-teal-400" />
-    <span className="text-slate-300">{text}</span>
-  </div>
+const ContactInfo = ({ icon: Icon, text, href, label }) => (
+  <a 
+    href={href}
+    className="flex gap-3 items-center transition-transform transform hover:scale-105 hover:text-teal-400 group"
+    aria-label={label}
+  >
+    <Icon className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+    <span className="text-slate-300 group-hover:text-teal-400">{text}</span>
+  </a>
 );
 
 const LegalLink = ({ text, targetId }) => (
@@ -19,9 +23,30 @@ const LegalLink = ({ text, targetId }) => (
 
 const Footer = () => {
   const contactInfo = [
-    { icon: FaPhone, text: "+91 9317900124" },
-    { icon: FaEnvelope, text: "midorchardcottage@gmail.com" },
-    { icon: FaInstagram, text: "@midorchard" },
+    { 
+      icon: FaPhone, 
+      text: "+91 9317900124 (Enquiries)", 
+      href: "tel:+919317900124",
+      label: "Call for enquiries"
+    },
+    { 
+      icon: FaPhone, 
+      text: "+91 9876543210 (Reservations)", 
+      href: "tel:+918894000274",
+      label: "Call for reservations"
+    },
+    { 
+      icon: FaEnvelope, 
+      text: "midorchardcottage@gmail.com", 
+      href: "mailto:midorchardcottage@gmail.com",
+      label: "Send email"
+    },
+    { 
+      icon: FaInstagram, 
+      text: "@midorchard", 
+      href: "https://instagram.com/midorchard",
+      label: "Visit Instagram profile"
+    },
   ];
 
   const legalLinks = [
@@ -44,7 +69,13 @@ const Footer = () => {
             </h2>
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <ContactInfo key={index} icon={info.icon} text={info.text} />
+                <ContactInfo 
+                  key={index} 
+                  icon={info.icon} 
+                  text={info.text} 
+                  href={info.href}
+                  label={info.label}
+                />
               ))}
             </div>
           </div>
