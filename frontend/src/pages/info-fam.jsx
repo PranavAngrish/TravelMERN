@@ -98,7 +98,7 @@ function MyComponent() {
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785911/img6_fkvs2s.png",
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img5_mgih6e.jpg",
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192238/IMG_5462_kzkz0z.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192241/IMG_5452_u5kzsq.jpg"
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192231/IMG_5454_hguvm7.jpg"
   ];
 
   const amenities = [
