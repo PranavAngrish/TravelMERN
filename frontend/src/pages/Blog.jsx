@@ -81,9 +81,9 @@ export const blogPosts = [
     slug: "mid-orchard-pet-friendly-retreat",
     content: [
       {
-        subheading: "Dog-Friendly Resorts Near Me: Your Ideal Kasol Getaway",
+        subheading: "Dog-Friendly hotels Near Me: Your Ideal Kasol Getaway",
         text: [
-          "When searching for the perfect escape where your pet is just as welcome as you are, Hotel Mid Orchard Kasol tops the list of dog-friendly resorts near me. This serene riverside hotel, nestled along the Parvati River, is a prime destination for pet lovers seeking both comfort and adventure in the heart of Kasol."
+          "When searching for the perfect escape where your pet is just as welcome as you are, Hotel Mid Orchard Kasol tops the list of dog-friendly hotels near me. This serene riverside hotel, nestled along the Parvati River, is a prime destination for pet lovers seeking both comfort and adventure in the heart of Kasol."
         ],
       },
       {
@@ -101,7 +101,7 @@ export const blogPosts = [
       {
         subheading: "Hotels for Pets in Kasol: All the Comforts You Need",
         text: [
-          "Hotel Mid Orchard Kasol goes beyond being just a dog-friendly resort—it’s a place where pets are pampered just as much as their owners. With easy access to pet food, cozy rooms, 24/7 hot water, and secure parking, every detail is taken care of to ensure a hassle-free stay. Whether you’re looking to relax or explore, this is one of the top hotels for pets in Kasol."
+          "Hotel Mid Orchard Kasol goes beyond being just a dog-friendly hotel—it’s a place where pets are pampered just as much as their owners. With easy access to pet food, cozy rooms, 24/7 hot water, and secure parking, every detail is taken care of to ensure a hassle-free stay. Whether you’re looking to relax or explore, this is one of the top hotels for pets in Kasol."
         ],
       },
       {
@@ -113,7 +113,7 @@ export const blogPosts = [
       {
         subheading: "Kasol Hotels: Book Your Pet-Friendly Riverside Escape Today",
         text: [
-          "Why settle for less when you can have the best? Make your reservation at Hotel Mid Orchard Kasol, one of the top dog-friendly resorts near you. Whether you’re planning a quiet retreat or an adventure-filled holiday, this Kasol hotel is ready to welcome you and your pet for an unforgettable stay."
+          "Why settle for less when you can have the best? Make your reservation at Hotel Mid Orchard Kasol, one of the top dog-friendly hotels near you. Whether you’re planning a quiet retreat or an adventure-filled holiday, this Kasol hotel is ready to welcome you and your pet for an unforgettable stay."
         ],
       }
     ]

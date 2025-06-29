@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPhone, FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const ContactInfo = ({ icon: Icon, text, href, label }) => (
   <a 
@@ -31,7 +31,7 @@ const Footer = () => {
     },
     { 
       icon: FaPhone, 
-      text: "+91 9876543210 (Reservations)", 
+      text: "+91 8894000274 (Reservations)", 
       href: "tel:+918894000274",
       label: "Call for reservations"
     },
@@ -46,6 +46,12 @@ const Footer = () => {
       text: "@midorchard", 
       href: "https://instagram.com/midorchard",
       label: "Visit Instagram profile"
+    },
+    { 
+      icon: FaYoutube, 
+      text: "@midorchardexperiences7154", 
+      href: "https://www.youtube.com/@midorchardexperiences7154",
+      label: "Visit YouTube channel"
     },
   ];
 

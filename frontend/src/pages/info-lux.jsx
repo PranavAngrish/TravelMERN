@@ -31,54 +31,57 @@ const ImageCarousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl group">
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
-      
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            index === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-          }`}
-        >
-          <img
-            src={image}
-            alt={`Room view ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
-      
-      <button 
-        onClick={goToPrevious}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:scale-110 z-20 border border-white/20"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <button 
-        onClick={goToNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:scale-110 z-20 border border-white/20"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-        {images.map((_, index) => (
-          <button
+    <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl group">
+      {/* Container with fixed aspect ratio */}
+      <div className="relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9]">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
+        
+        {images.map((image, index) => (
+          <div
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'bg-white shadow-lg scale-125' 
-                : 'bg-white/50 hover:bg-white/75'
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
             }`}
-            onClick={() => setCurrentIndex(index)}
-          />
+          >
+            <img
+              src={image}
+              alt={`Room view ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
         ))}
+        
+        <button 
+          onClick={goToPrevious}
+          className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:scale-110 z-20 border border-white/20"
+        >
+          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button 
+          onClick={goToNext}
+          className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-black/40 backdrop-blur-sm text-white p-2 md:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:scale-110 z-20 border border-white/20"
+        >
+          <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-20">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-white shadow-lg scale-125' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -89,12 +92,13 @@ function MyComponent() {
   const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
   const images = [
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img5_yap8bg.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img6_xep2fu.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5455_qs0np0.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192241/IMG_5453_qrvoly.jpg",
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img4_jj5dzv.jpg",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786538/img1_budpmk.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img3_nk8x77.jpg",
     "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786560/img8_fypqic.png",
-    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786547/img7_txpv5v.png"
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5449_zv2vcw.jpg"
   ];
 
   const amenities = [

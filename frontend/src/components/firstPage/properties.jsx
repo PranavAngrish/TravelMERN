@@ -89,7 +89,7 @@ function LocationInfo({ iconSrc, title, subtitle }) {
       {/* Description */}
       <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
         Experience the tranquil beauty of Parvati Valley at Mid Orchard Kasol. 
-        Nestled along the pristine Parvati River, our resort offers the perfect 
+        Nestled along the pristine Parvati River, our hotel offers the perfect 
         blend of comfort and nature's serenity in the heart of the Himalayas.
       </p>
 
@@ -113,7 +113,7 @@ function Properties() {
         <LocationInfo
           iconSrc="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png"
           title="Mid Orchard Kasol"
-          subtitle="Riverside Resort & Retreat"
+          subtitle="Riverside Hotel & Retreat"
         />
       </PropertyCard>
       
@@ -122,7 +122,7 @@ function Properties() {
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Why Choose Mid Orchard Kasol?</h2>
-            <p className="text-xl text-white">Discover what makes our resort special</p>
+            <p className="text-xl text-white">Discover what makes our hotel special</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

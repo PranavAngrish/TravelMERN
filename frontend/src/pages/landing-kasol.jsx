@@ -53,20 +53,20 @@ function LandingKasol() {
   
   const rooms = [
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776121/sd_t0e1rb.jpg",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770731/sd_yrzjmq.png",
       title: "Super Deluxe Room With Balcony & Mountain View",
       buttonText: "Know More",
       linkTo: "/kasol-mountain-view-hotel"
     },
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770734/lux_x4twoa.png",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
       title: "Luxury Room With Balcony & River View",
       buttonText: "Know More",
       linkTo: "/kasol-river-view-hotel"
     },
     {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720776285/fam_az7tgq.jpg",
-      title: "Family Suite With Balcony",
+      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
+      title: "Family Suite With Balcony & River View",
       buttonText: "Know More",
       linkTo: "/kasol-family-hotel"
     }

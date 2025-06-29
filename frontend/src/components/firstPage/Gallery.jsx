@@ -9,9 +9,9 @@ const galleryImages = {
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787216/img5_dtd1cy.jpg',
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787201/img9_taptrr.jpg',
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787259/img6_l4ae0z.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787218/img8_abq4cp.jpg',
+    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192241/IMG_5452_u5kzsq.jpg',
     'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787216/img3_y10ptj.jpg',
-    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787214/img7_mvopft.jpg',
+    'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg',
   ],
 };
 
