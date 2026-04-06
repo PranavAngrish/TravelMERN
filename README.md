@@ -25,7 +25,6 @@
 ## 📖 Table of Contents
 
 - [About the Project](#-about-the-project)
-- [Live Demo](#-live-demo)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
@@ -46,15 +45,6 @@
 **Mid Orchard** is a full-stack hotel booking platform built for a real boutique resort in **Kasol, Himachal Pradesh, India**. Guests can browse multiple property categories, select dates, choose their preferred room type, and submit booking enquiries — all through a beautifully crafted, mobile-responsive interface.
 
 The platform supports both **email/password** and **Google OAuth** sign-in, features **email verification** for new accounts, sends **automated confirmation emails** to guests and admin on booking, and automatically **cleans up unverified accounts** using a scheduled cron job.
-
----
-
-## 🌐 Live Demo
-
-| Service | URL |
-|---|---|
-| 🖥️ Frontend (Vercel) | [midorchard-client.vercel.app](https://midorchard-client.vercel.app) |
-| 🔒 Backend (HTTPS) | [www.hotelmidorchardkasol.in](https://www.hotelmidorchardkasol.in) |
 
 ---
 
@@ -521,35 +511,6 @@ Update the `origin` in CORS config and the `BASE_URL` / `FRONTEND_URL` env vars 
 
 ---
 
-## 📸 Screenshots
-
-> *Hero section of the landing page — full-screen property view with integrated booking search*
-
-The homepage features:
-- Full-bleed Cloudinary-hosted background image with parallax
-- Responsive navigation with mobile hamburger sidebar
-- Inline booking widget (guests · check-in · check-out · search)
-- Scrollable sections: Properties → Testimonials → Gallery → About → Blog → Contact
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
-
-1. Fork the repository
-2. Create your branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a pull request
-
----
-
-## 📄 License
-
-This project is licensed under the **ISC License**.
-
----
 
 <div align="center">
 
