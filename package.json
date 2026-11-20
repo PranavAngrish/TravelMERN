@@ -1,0 +1,12 @@
+{
+  "name": "midorchard",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix frontend install && npm --prefix backend install",
+    "dev": "concurrently -n api,web \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix frontend ci --include=dev && npm --prefix frontend run build && npm --prefix backend ci --omit=dev",
+    "start": "node backend/index.js"
+  },
+  "devDependencies": { "concurrently": "^9.0.0" },
+  "engines": { "node": ">=18" }
+}

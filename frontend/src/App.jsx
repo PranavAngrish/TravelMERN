@@ -1,25 +1,5 @@
-
 import Routing from './routing/Routing'
 
-
-
-
-function App() {
-
-
-  return (
-    <>
-      <div >
-        
-        <Routing></Routing>
-       
-        
-        
-      </div>
-      
-    </>
-  )
+export default function App() {
+  return <Routing />
 }
-
-export default App
-

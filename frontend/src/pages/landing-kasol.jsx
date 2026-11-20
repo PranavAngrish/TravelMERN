@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
+import { rooms } from "../data/rooms";
 
 function RoomCard({ imageSrc, title, buttonText, linkTo }) {
   const navigate = useNavigate();
@@ -51,26 +52,12 @@ function RoomCard({ imageSrc, title, buttonText, linkTo }) {
 function LandingKasol() {
   const navigate = useNavigate();
   
-  const rooms = [
-    {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770731/sd_yrzjmq.png",
-      title: "Super Deluxe Room With Balcony & Mountain View",
-      buttonText: "Know More",
-      linkTo: "/kasol-mountain-view-hotel"
-    },
-    {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
-      title: "Luxury Room With Balcony & River View",
-      buttonText: "Know More",
-      linkTo: "/kasol-river-view-hotel"
-    },
-    {
-      imageSrc: "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
-      title: "Family Suite With Balcony & River View",
-      buttonText: "Know More",
-      linkTo: "/kasol-family-hotel"
-    }
-  ];
+  const cards = rooms.map((r) => ({
+    imageSrc: r.cardImage,
+    title: r.cardTitle,
+    buttonText: "Know More",
+    linkTo: r.infoPath,
+  }));
 
   const handleLogo = () => {
     navigate('/');
@@ -151,7 +138,7 @@ function LandingKasol() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {rooms.map((room, index) => (
+            {cards.map((room, index) => (
               <RoomCard key={index} {...room} />
             ))}
           </div>
