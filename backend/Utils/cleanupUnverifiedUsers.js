@@ -1,19 +1,18 @@
-// utils/cleanupUnverifiedUsers.js
+const cron = require("node-cron");
+const Users = require("../models/users");
+const Tokens = require("../models/tokens");
 
-const cron = require('node-cron');
-const User = require('../models/user_model');
-
+// Every hour: drop unverified users older than 1 hour, and expired verification tokens
 function cleanupUnverifiedUsers() {
-    // Schedule the job to run every hour
-    cron.schedule('0 * * * *', async () => {
-        try {
-            const oneHourAgo = new Date(Date.now() - 3600 * 1000);
-            const deletedUsers = await User.deleteMany({ verified: false, createdAt: { $lt: oneHourAgo } });
-            console.log('Deleted unverified users older than 1 hour',deletedUsers);
-        } catch (error) {
-            console.error('Error deleting unverified users:', error);
-        }
-    });
+  cron.schedule("0 * * * *", async () => {
+    try {
+      const deleted = await Users.deleteUnverifiedOlderThan(new Date(Date.now() - 3600 * 1000));
+      await Tokens.deleteExpired();
+      console.log(`Deleted ${deleted} unverified users older than 1 hour`);
+    } catch (error) {
+      console.error("Error cleaning up unverified users:", error);
+    }
+  });
 }
 
 module.exports = cleanupUnverifiedUsers;

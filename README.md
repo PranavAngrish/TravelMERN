@@ -8,7 +8,7 @@
 
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pg-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Firebase](https://img.shields.io/badge/Firebase-Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
@@ -101,7 +101,7 @@ The platform supports both **email/password** and **Google OAuth** sign-in, feat
 | Technology | Version | Purpose |
 |---|---|---|
 | Node.js + Express | 4.19 | REST API server |
-| MongoDB + Mongoose | 8.4 | Database & ODM |
+| PostgreSQL + node-postgres (pg) | 8.4 | Database & ODM |
 | JWT (jsonwebtoken) | 9.0 | Auth token signing |
 | bcryptjs | 2.4 | Password hashing |
 | Nodemailer | 6.9 | Transactional emails |
@@ -113,7 +113,7 @@ The platform supports both **email/password** and **Google OAuth** sign-in, feat
 ### Infrastructure
 | Service | Usage |
 |---|---|
-| MongoDB Atlas | Cloud database |
+| PostgreSQL Atlas | Cloud database |
 | Firebase | Google OAuth |
 | Cloudinary | Image hosting (CDN) |
 | Vercel | Frontend deployment |
@@ -224,10 +224,10 @@ TravelMERN/
 │                    Nodemailer  ──►  Guest & Admin Email     │
 │                    node-cron   ──►  Hourly Cleanup Job      │
 └────────────────────────┬────────────────────────────────────┘
-                         │ Mongoose ODM
+                         │ node-postgres (pg) ODM
                          ▼
                 ┌─────────────────┐
-                │  MongoDB Atlas   │
+                │  PostgreSQL Atlas   │
                 │  - users         │
                 │  - tokens        │
                 │  - forms         │
@@ -378,7 +378,7 @@ The app uses **Redux Toolkit** with **redux-persist** (localStorage) for two sli
 ### Prerequisites
 - **Node.js** v18+
 - **npm** v9+
-- **MongoDB Atlas** account
+- **PostgreSQL Atlas** account
 - **Firebase** project (for Google OAuth)
 - **Nodemailer**-compatible email account (Gmail / SMTP)
 
@@ -428,8 +428,20 @@ All variables live in one root `.env` (see `.env.example`). `VITE_*` variables a
 One service serves both the API and the built frontend.
 
 - Build: `npm run build`, Start: `npm start` (already set in `railway.json`)
-- Paste the contents of `.env` into Railway > Variables > RAW Editor
+- Add a **PostgreSQL** service in the same Railway project; on the app service set `DATABASE_URL` to `${{Postgres.DATABASE_URL}}`
+- Paste the rest of `.env` into Railway > Variables > RAW Editor
+- Tables are created automatically on first start
 - Set `BASE_URL` / `FRONTEND_URL` to your custom domain
+
+### Migrating old MongoDB data
+
+Run once from your machine with `MONGODB` (old Atlas URI) and `DATABASE_URL` (Railway Postgres, **public** URL) set in `.env`:
+
+```bash
+npm run migrate
+```
+
+It writes a JSON backup to `data-export/` (git-ignored; contains password hashes, keep private) and imports users, enquiries and live verification tokens. Password hashes are copied unchanged, so existing users can still sign in. It is safe to re-run.
 
 ---
 

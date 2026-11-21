@@ -1,8 +1,8 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const path = require("path");
 // One .env at the repo root, shared by backend and frontend (Railway injects real env vars instead)
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
+const { initDb } = require("./db"); // after dotenv so DATABASE_URL is set
 const userRouter = require("./routes/user_routes");
 const authRouter = require("./routes/authRoutes");
 const cors = require("cors");
@@ -21,8 +21,7 @@ const cleanupUnverifiedUsers = require("./Utils/cleanupUnverifiedUsers");
 const formRoutes = require("./routes/formSubmit");
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGODB)
+initDb()
   .then(() => {
     console.log("Connected to the database");
     cleanupUnverifiedUsers();
