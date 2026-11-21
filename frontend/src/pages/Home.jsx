@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Footer from "../components/footer";
 import Properties from "../components/firstPage/properties";
 import Testimonial from "../components/firstPage/testimonials";
-import Host from "../components/Host";
+import Host from "../components/HostSection";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setFormData } from "../redux/formSlice";
