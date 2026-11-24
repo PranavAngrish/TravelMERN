@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import policies from '../../../shared/policies.json'
 import { site } from '../lib/site'
 import useSeo from '../lib/useSeo'
@@ -5,6 +7,9 @@ import useSeo from '../lib/useSeo'
 export default function Policies() {
   const p = site.pages['/policies']
   useSeo(p.title, p.description)
+  const { hash } = useLocation()
+  // Links from other pages (e.g. the enquiry form) land on the right section
+  useEffect(() => { if (hash) document.getElementById(hash.slice(1))?.scrollIntoView() }, [hash])
   return (
     <div className="container-page max-w-3xl pb-20 pt-28 sm:pt-36">
       <h1 className="text-4xl text-navy sm:text-5xl">Booking policies</h1>

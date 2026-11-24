@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../api/axios'
 import { site, getRoom, waLink } from '../lib/site'
 import { WhatsAppButton } from '../components/Cta'
@@ -73,6 +73,7 @@ export default function Enquiry() {
 
             <div className="sm:col-span-2">
               {error && <p role="alert" className="mb-4 rounded-lg bg-red-50 px-4 py-3 text-red-800">{error}</p>}
+              <p className="mb-4 text-sm text-ink/65">By sending this you agree that we may contact you about your enquiry using these details. If you add an email we send one confirmation to it. See our <Link to="/policies#privacy" className="text-brand-deep underline">privacy notice</Link>.</p>
               <button className="btn-primary w-full sm:w-auto" disabled={busy}>{busy ? 'Sending…' : 'Send enquiry'}</button>
             </div>
           </form>

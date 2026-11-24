@@ -2,6 +2,8 @@ const Forms = require("../models/forms");
 const sendEmail = require("../Utils/sendEmail");
 const { clean, isEmail, isoDate } = require("../validate");
 const site = require("../../shared/site.json");
+const seo = require("../seo");
+const { guestConfirmation, adminNotification } = require("../emails/templates");
 
 const ROOMS = new Map(site.rooms.map((r) => [r.slug, r.name]));
 const DAY = 86400000;
@@ -48,8 +50,10 @@ module.exports.submitEnquiry = async (req, res) => {
     message: message || null,
   };
 
+  const token = Forms.newToken();
+  let saved;
   try {
-    await Forms.create(data);
+    saved = await Forms.create({ ...data, token });
   } catch (e) {
     console.error("Enquiry save failed:", e);
     return res.status(500).json({ ok: false, message: "We couldn't save your enquiry. Please message us on WhatsApp instead." });
@@ -58,16 +62,39 @@ module.exports.submitEnquiry = async (req, res) => {
   // The enquiry is safely stored. Answer now; email in the background so a slow
   // or blocked mail server can never make the form hang or fail.
   res.status(201).json({ ok: true });
-
-  const summary = `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || "-"}\nRoom: ${data.room}\nGuests: ${data.guests}\nCheck-in: ${data.checkIn}\nCheck-out: ${data.checkOut}\nMessage: ${data.message || "-"}`;
-  sendEmail(process.env.EMAIL_USER, `New enquiry: ${data.name} (${data.room})`, `New enquiry from the website.\n\n${summary}`, {
-    replyTo: data.email || undefined,
-  });
-  if (data.email) {
-    sendEmail(
-      data.email,
-      "We received your enquiry | Mid Orchard Kasol",
-      `Hello ${data.name},\n\nThank you for your enquiry. We have noted ${data.room} from ${data.checkIn} to ${data.checkOut} for ${data.guests} guest(s) and the team will contact you soon on ${data.phone}.\n\nFor a faster reply, message us on WhatsApp: https://wa.me/${site.whatsapp}\n\nWarm regards,\nMid Orchard, Kasol`
-    );
-  }
+  notify(data, saved.id, token, seo.baseUrl(req)).catch((e) => console.error("Notification failed:", e.message));
 };
+
+async function notify(data, id, token, base) {
+  const ref = Forms.ref(id);
+  const replyTo = process.env.EMAIL_USER || site.email;
+
+  // 1. Guest confirmation (skipped if no email, or the address was reported "not me" before)
+  let guestEmail = "no-email";
+  if (data.email) {
+    try {
+      if (await Forms.isSuppressed(data.email)) guestEmail = "suppressed";
+      else {
+        const notMeUrl = `${base}/enquiry/not-me?t=${token}`;
+        const g = guestConfirmation({ ...data, ref, base, notMeUrl });
+        const ok = await sendEmail(data.email, g.subject, g.text, {
+          html: g.html,
+          replyTo,
+          headers: {
+            // Shows an "Unsubscribe" option in Gmail/Apple Mail and lets them report a wrong address in one tap
+            "List-Unsubscribe": `<${base}/enquiry/not-me?t=${token}>`,
+            "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+          },
+        });
+        guestEmail = ok ? "sent" : "failed";
+      }
+    } catch (e) {
+      console.error("Guest email step failed:", e.message);
+      guestEmail = "skipped";
+    }
+  }
+
+  // 2. Notification to the hotel inbox
+  const a = adminNotification({ ...data, id, ref, base, receivedAt: new Date(), guestEmail });
+  await sendEmail(process.env.EMAIL_USER, a.subject, a.text, { html: a.html, replyTo: data.email || undefined });
+}

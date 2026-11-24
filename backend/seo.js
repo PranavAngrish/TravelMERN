@@ -133,6 +133,6 @@ function sitemap(base) {
 }
 
 const robots = (base) =>
-  `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /thank-you\n\nSitemap: ${base}/sitemap.xml\n`;
+  `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /thank-you\nDisallow: /enquiry/not-me\n\nSitemap: ${base}/sitemap.xml\n`;
 
 module.exports = { resolve, render, sitemap, robots, baseUrl, DIST };

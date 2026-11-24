@@ -21,7 +21,7 @@ const smtp = () => {
 };
 
 // Plain HTTPS API. Use this on hosts that block SMTP ports (Railway Hobby/Trial do).
-const viaResend = async ({ to, subject, text, replyTo }) => {
+const viaResend = async ({ to, subject, text, html, replyTo, headers }) => {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -30,20 +30,29 @@ const viaResend = async ({ to, subject, text, replyTo }) => {
       to: [to],
       subject,
       text,
+      ...(html ? { html } : {}),
       ...(replyTo ? { reply_to: replyTo } : {}),
+      ...(headers ? { headers } : {}),
     }),
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`Resend ${res.status}: ${await res.text()}`);
 };
 
-/** Never throws. Resolves true if the mail was handed off, false otherwise. */
-module.exports = async (to, subject, text, { replyTo } = {}) => {
+/**
+ * Never throws. Resolves true if the mail was handed off, false otherwise.
+ * `text` is always sent (plain-text alternative); `html` is the styled version.
+ */
+module.exports = async (to, subject, text, { html, replyTo, headers } = {}) => {
   try {
+    if (!to) {
+      console.warn("Email skipped (no recipient):", subject);
+      return false;
+    }
     if (process.env.RESEND_API_KEY) {
-      await viaResend({ to, subject, text, replyTo });
+      await viaResend({ to, subject, text, html, replyTo, headers });
     } else if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-      await smtp().sendMail({ from: process.env.EMAIL_USER, to, subject, text, replyTo });
+      await smtp().sendMail({ from: process.env.EMAIL_FROM || process.env.EMAIL_USER, to, subject, text, html, replyTo, headers });
     } else {
       console.warn("Email not configured; skipped:", subject);
       return false;

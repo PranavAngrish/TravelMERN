@@ -6,7 +6,9 @@ const clean = (v, max) =>
     .trim()
     .slice(0, max);
 
-const isEmail = (s) => /^[^\s@]{1,64}@[^\s@]{1,255}\.[^\s@]{2,}$/.test(s) && s.length <= 254;
+// Conservative on purpose: no quotes-in-local-part, no brackets, no spaces. Anything exotic is rejected.
+const isEmail = (s) =>
+  s.length <= 254 && /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/.test(s);
 
 const isoDate = (s) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
