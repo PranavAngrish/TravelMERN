@@ -1,10 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
-
-const baseURL = import.meta.env.VITE_API_URL || '/api'
-
-const instance = axios.create({
-  baseURL: baseURL,  // This will prepend /api to all requests
-});
-
-export default instance;
+// Same origin in production (the server serves the site and the API together)
+export default axios.create({ baseURL: import.meta.env.VITE_API_URL || '/api', timeout: 20000 })

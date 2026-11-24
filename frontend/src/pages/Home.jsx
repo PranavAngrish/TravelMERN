@@ -1,471 +1,98 @@
-import React, { useState, useRef } from "react";
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import Footer from "../components/footer";
-import Properties from "../components/firstPage/properties";
-import Testimonial from "../components/firstPage/testimonials";
-import Host from "../components/HostSection";
-import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { setFormData } from "../redux/formSlice";
-import { signoutSuccess } from "../redux/userSlice";
-import { resetForm } from "../redux/formSlice";
-import api from "../api/axios";
-import Gallery from "../components/firstPage/Gallery.jsx";
-import Blog from "../pages/Blog.jsx";
+import { Link } from 'react-router-dom'
+import { Waves, Mountain, Leaf, Car } from 'lucide-react'
+import Img from '../components/Img'
+import GalleryGrid from '../components/GalleryGrid'
+import RoomCard from '../components/RoomCard'
+import { WhatsAppButton, EnquiryButton } from '../components/Cta'
+import { site } from '../lib/site'
+import people from '../../../shared/people.json'
+import useSeo from '../lib/useSeo'
 
-function Home() {
-  const today = new Date();
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
-  const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+const features = [
+  { icon: Waves, title: 'On the Parvati river', text: 'Wake up to the sound of the river, a short way from the market and away from the crowd.' },
+  { icon: Leaf, title: 'Pure vegetarian kitchen', text: 'Our restaurant serves fresh vegetarian food, the only pure veg hotel in Kasol.' },
+  { icon: Mountain, title: 'Private balconies', text: 'Every room opens to a balcony with mountain or river views.' },
+  { icon: Car, title: 'Parking and WiFi', text: 'Secure on-site parking and high-speed WiFi for a comfortable stay.' },
+]
 
-  const [numberOfPeople, setNumberOfPeople] = useState(1);
-  const [checkInDate, setCheckInDate] = useState(today);
-  const [checkOutDate, setCheckOutDate] = useState(tomorrow);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
-  const propertiesRef = useRef(null);
-
-  const formatDate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  };
-
-  const handleClick = () => navigate("/signin");
-
-  const handleClickLogOut = async () => {
-    try {
-      await api.post('/auth/signout');
-      dispatch(signoutSuccess());
-      dispatch(resetForm());
-    } catch(error) {
-      console.error("Logout failed:", error);
-    }
-  };
-
-  const incrementCount = () => {
-    if (numberOfPeople < 8) setNumberOfPeople(numberOfPeople + 1);
-  };
-
-  const decrementCount = () => {
-    if (numberOfPeople > 1) setNumberOfPeople(numberOfPeople - 1);
-  };
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
-  const NavItem = ({ text, targetId, isMobile = false }) => (
-    <div 
-      onClick={() => {
-        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-        if (isMobile) closeSidebar();
-      }}
-      className={`${isMobile 
-        ? "text-gray-800 hover:text-[#3DBBCD] py-3 px-4 border-b border-gray-200 cursor-pointer transition-colors duration-300 text-lg" 
-        : "text-white hover:text-teal-300 cursor-pointer transition-colors duration-300"
-      }`}
-    >
-      {text}
-    </div>
-  );
-  
-  const DateSection = ({ icon, title, date, subtitle, onDateChange, minDate }) => (
-    <div className="flex flex-col w-full sm:w-auto group">
-      <div className="flex items-center gap-2 text-gray-600">
-        <img src={icon} alt={`${title} icon`} className="w-[24px] sm:w-[28px] md:w-[30px] aspect-[1.25]" />
-        <div className="text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-cyan-600">{title}</div>
-      </div>
-      <div className="mt-1 sm:mt-2 text-base sm:text-lg md:text-xl font-semibold relative">
-        <DatePicker
-          selected={date}
-          onChange={onDateChange}
-          minDate={minDate}
-          dateFormat="dd/MM/yyyy"
-          className="bg-transparent border border-gray-300 p-2 text-gray-700 w-full appearance-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300 rounded-lg pr-8"
-        />
-        <svg className="w-5 h-5 text-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-300 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
-        </svg>
-      </div>
-      <div className="mt-1 text-xs sm:text-sm text-gray-400">{subtitle}</div>
-    </div>
-  );
-
-  const PeopleSection = ({ icon, title, subtitle }) => (
-    <div className="flex flex-col w-full sm:w-auto group">
-      <div className="flex items-center gap-2 text-gray-600">
-        <img src={icon} alt={`${title} icon`} className="w-[24px] sm:w-[28px] md:w-[30px] aspect-[1.25]" />
-        <div className="text-xs sm:text-sm md:text-base transition-colors duration-300 group-hover:text-cyan-600">{title}</div>
-      </div>
-      <div className="mt-1 sm:mt-2 text-base sm:text-lg md:text-xl font-semibold">
-        <div className="inline-flex items-center justify-between bg-gray-200 rounded-lg px-2 py-1 transition-all duration-300 group-hover:bg-gray-300 w-full sm:w-auto">
-          <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-lg w-6 h-6 flex items-center justify-center" onClick={decrementCount}>-</button>
-          <span className="text-gray-900 font-bold mx-2">{numberOfPeople}</span>
-          <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-lg w-6 h-6 flex items-center justify-center" onClick={incrementCount}>+</button>
-        </div>
-      </div>
-      <div className="mt-1 text-xs sm:text-sm text-gray-400">{subtitle}</div>
-    </div>
-  );
-
-  const navItems = [
-    { text: "Properties", targetId: "properties-section" },
-    { text: "Testimonials", targetId: "testimonials-section" },
-    { text: "Gallery", targetId: "gallery-section" },
-    { text: "About us", targetId: "about-section" },
-    { text: "Blog", targetId: "blog-section" },
-    { text: "Contact", targetId: "contact-section" },
-  ];
-
-  const navigateToKasol = () => {
-    dispatch(setFormData({
-      checkInDate: formatDate(checkInDate),
-      checkOutDate: formatDate(checkOutDate),
-      numberOfGuests: numberOfPeople.toString(),
-      loading: false
-    }));
-    navigate("/midorchard-kasol");
-  };
-
-  const handleCheckInChange = (date) => {
-    date.setHours(0, 0, 0, 0);
-    setCheckInDate(date);
-    if (date >= checkOutDate) {
-      const newCheckOutDate = new Date(date);
-      newCheckOutDate.setDate(newCheckOutDate.getDate() + 1);
-      newCheckOutDate.setHours(0, 0, 0, 0); 
-      setCheckOutDate(newCheckOutDate);
-    }
-  };
-
-  const handleCheckOutChange = (date) => {
-    if (date > checkInDate) {
-      date.setHours(0, 0, 0, 0);
-      setCheckOutDate(date);
-    }
-  };
-
+export default function Home() {
+  const p = site.pages['/']
+  useSeo(p.title, p.description)
   return (
-    <div className="min-h-screen bg-[#0F1A29] text-white relative">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-center bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/bg_main_rzkapc.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}>
-          <div className="absolute inset-0 bg-[#0F1A29] opacity-0"></div>
-        </div>
-      </div>
-      
-      {/* Mobile Sidebar - Full Screen */}
-      <div className={`fixed inset-0 bg-slate-800 bg-opacity-95 backdrop-blur-sm transform transition-all duration-300 ease-in-out z-50 lg:hidden ${
-        isSidebarOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}>
-        <div className="flex flex-col h-full justify-center items-center text-center px-8">
-          {/* Sidebar Header */}
-          <div className="flex items-center justify-between w-full max-w-md mb-12">
-            <img
-              src='https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png'
-              alt="Mid Orchard Logo"
-              className="w-[80px] h-auto"
-            />
-            <button
-              onClick={closeSidebar}
-              className="p-3 rounded-full hover:bg-gray-100 transition-colors duration-200"
-            >
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
+    <>
+      <section className="on-dark relative flex min-h-[88svh] items-end bg-navy">
+        <Img src={site.hero} alt="Mid Orchard hotel in Kasol with mountain and river views" priority sizes="100vw" widths={[800, 1200, 1600, 2000]} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/20" />
+        <div className="container-page relative pb-14 pt-32 sm:pb-20">
+          <h1 className="max-w-3xl text-4xl leading-[1.08] text-white sm:text-6xl">A pure vegetarian riverside stay in Kasol</h1>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">Rooms with private balconies, mountain and river views, an in-house restaurant and parking, in the heart of Parvati Valley.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <WhatsAppButton />
+            <EnquiryButton variant="light">Send enquiry</EnquiryButton>
           </div>
-          
-          {/* Navigation Items */}
-          <nav className="flex flex-col space-y-8 mb-12">
-            {navItems.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  document.getElementById(item.targetId)?.scrollIntoView({ behavior: 'smooth' });
-                  closeSidebar();
-                }}
-                className="text-white hover:text-[#3DBBCD] cursor-pointer transition-colors duration-300 text-2xl font-medium"
-              >
-                {item.text}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-page">
+          <h2 className="text-3xl text-navy sm:text-4xl">Choose your room</h2>
+          <p className="mt-3 max-w-xl text-ink/75">Three room types, each with a private balcony.</p>
+          <div className="mt-10 grid gap-10 md:grid-cols-3">
+            {site.rooms.map((r) => <RoomCard key={r.slug} room={r} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-mist">
+        <div className="container-page">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-3xl text-navy sm:text-4xl">Around the property</h2>
+            <Link to="/gallery" className="btn-outline !py-2.5">View all photos</Link>
+          </div>
+          <GalleryGrid images={site.gallery} limit={5} />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-page">
+          <h2 className="max-w-2xl text-3xl text-navy sm:text-4xl">Why guests choose Mid Orchard</h2>
+          <div className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="border-t border-navy/15 pt-5">
+                <Icon className="h-6 w-6 text-brand-deep" aria-hidden="true" />
+                <h3 className="mt-4 text-xl text-navy">{title}</h3>
+                <p className="mt-2 leading-relaxed text-ink/75">{text}</p>
               </div>
             ))}
-          </nav>
-          
-          {/* Login/Logout Button */}
-          <div>
-            {user.currentUser == null ? (
-              <button 
-                onClick={() => {
-                  handleClick();
-                  closeSidebar();
-                }} 
-                className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
-              >
-                LOGIN
-              </button>
-            ) : (
-              <button 
-                onClick={() => {
-                  handleClickLogOut();
-                  closeSidebar();
-                }} 
-                className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg"
-              >
-                LOGOUT
-              </button>
-            )}
           </div>
         </div>
-      </div>
-      
-      <div className="relative z-10 min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="p-3 sm:p-5 md:p-6">
-          <nav className="flex justify-between items-center">
-            {/* Logo */}
-            <img
-              src='https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png'
-              alt="Mid Orchard Logo"
-              className="w-[50px] sm:w-[70px] md:w-[90px] h-auto"
-            />
-            
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8 xl:gap-32">
-              {navItems.map((item, index) => (
-                <NavItem key={index} text={item.text} targetId={item.targetId} />
-              ))}
-              {user.currentUser == null ? (
-                <button onClick={handleClick} className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
-                  LOGIN
-                </button>
-              ) : (
-                <button onClick={handleClickLogOut} className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
-                  LOGOUT
-                </button>
-              )}
-            </div>
+      </section>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleSidebar}
-              className="lg:hidden p-2 rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors duration-200"
-            >
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </nav>
-        </header>
-
-        {/* Main Content */}
-        <main className="px-4 sm:px-8 md:px-20 py-2 sm:py-6 md:py-16 flex-grow flex flex-col justify-center -mt-8 sm:mt-0">
-          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4">
-            Property for <span className="text-[#3DBBCD] text-3xl sm:text-5xl md:text-7xl">memorable</span>
-            <br />
-            moments rich in
-            <br />
-            emotions
-          </h1>
-          <p className="text-sm sm:text-lg md:text-2xl mb-6 sm:mb-8">
-            Enjoy mesmerizing views of the
-            <br />
-            valley with a peaceful and
-            <br />
-            Luxurious stay
-          </p>
-          <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg self-start" onClick={navigateToKasol}>
-            BOOK NOW
-          </button>
-        </main>
-
-        {/* Booking Form Section */}
-        <section className="bg-white text-black rounded-t-[24px] sm:rounded-t-[36px] md:rounded-tl-[72px] lg:rounded-tl-[108px] p-4 sm:p-6 md:p-8 lg:p-12 w-full sm:w-[90%] md:w-[85%] lg:w-[75%] max-w-[1200px] self-end">
-          {/* Mobile Layout */}
-          <div className="block sm:hidden">
-            {/* People Section - Mobile */}
-            <div className="flex flex-col mb-4 group">
-              <div className="flex items-center gap-2 text-gray-600 mb-2">
-                <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082761/profile_icon_ejstvh.svg" alt="Guests icon" className="w-[18px] aspect-[1.25]" />
-                <div className="text-sm transition-colors duration-300 group-hover:text-cyan-600">Guests</div>
-              </div>
-              <div className="text-base font-semibold mb-1">
-                <div className="inline-flex items-center justify-between bg-gray-200 rounded-lg px-3 py-2 transition-all duration-300 group-hover:bg-gray-300 w-[140px]">
-                  <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-base w-6 h-6 flex items-center justify-center" onClick={decrementCount}>-</button>
-                  <span className="text-gray-900 font-bold mx-2">{numberOfPeople}</span>
-                  <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-base w-6 h-6 flex items-center justify-center" onClick={incrementCount}>+</button>
-                </div>
-              </div>
-              <div className="text-xs text-gray-400">Add Guests</div>
-            </div>
-
-            {/* Date Sections in Grid - Mobile */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              {/* Check-in Section - Mobile */}
-              <div className="flex flex-col group">
-                <div className="flex items-center gap-1 text-gray-600 mb-2">
-                  <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082743/date_icon_zikap9.svg" alt="Check-in icon" className="w-[16px] aspect-[1.25]" />
-                  <div className="text-xs transition-colors duration-300 group-hover:text-cyan-600">Check-in</div>
-                </div>
-                <div className="text-sm font-semibold relative mb-1">
-                  <DatePicker
-                    selected={checkInDate}
-                    onChange={handleCheckInChange}
-                    minDate={today}
-                    dateFormat="dd/MM/yyyy"
-                    className="bg-transparent border border-gray-300 p-2 text-gray-700 w-full appearance-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300 rounded-lg pr-7 text-xs"
-                  />
-                  <svg className="w-3 h-3 text-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-300 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
-                  </svg>
-                </div>
-                <div className="text-xs text-gray-400">Select date</div>
-              </div>
-
-              {/* Check-out Section - Mobile */}
-              <div className="flex flex-col group">
-                <div className="flex items-center gap-1 text-gray-600 mb-2">
-                  <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082742/checkout_w9sy9b.svg" alt="Check-out icon" className="w-[16px] aspect-[1.25]" />
-                  <div className="text-xs transition-colors duration-300 group-hover:text-cyan-600">Check-out</div>
-                </div>
-                <div className="text-sm font-semibold relative mb-1">
-                  <DatePicker
-                    selected={checkOutDate}
-                    onChange={handleCheckOutChange}
-                    minDate={new Date(checkInDate.getTime() + 86400000)}
-                    dateFormat="dd/MM/yyyy"
-                    className="bg-transparent border border-gray-300 p-2 text-gray-700 w-full appearance-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300 rounded-lg pr-7 text-xs"
-                  />
-                  <svg className="w-3 h-3 text-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-300 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
-                  </svg>
-                </div>
-                <div className="text-xs text-gray-400">Select date</div>
-              </div>
-            </div>
-
-            {/* Search Button - Mobile */}
-            <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg w-full flex items-center justify-center gap-2" onClick={navigateToKasol}>
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-              <span className="text-white font-bold">SEARCH</span>
-            </button>
+      <section className="section bg-mist">
+        <div className="container-page">
+          <h2 className="text-3xl text-navy sm:text-4xl">What guests say</h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {people.reviews.map((r) => (
+              <figure key={r.name} className="border-l-2 border-brand pl-6">
+                <p className="text-sm font-medium text-brand-deep" aria-label={`${r.rating} out of 5 stars`}>{'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}</p>
+                <blockquote className="mt-2 leading-relaxed text-ink/85">{r.text}</blockquote>
+                <figcaption className="mt-3 text-sm text-ink/65">{r.name}, {r.location}</figcaption>
+              </figure>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Desktop Layout */}
-          <div className="hidden sm:flex flex-row justify-between items-end space-x-4">
-            {/* People Section - Desktop */}
-            <div className="flex flex-col w-auto group">
-              <div className="flex items-center gap-2 text-gray-600 mb-2">
-                <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082761/profile_icon_ejstvh.svg" alt="Guests icon" className="w-[24px] sm:w-[28px] lg:w-[30px] aspect-[1.25]" />
-                <div className="text-sm md:text-base transition-colors duration-300 group-hover:text-cyan-600">Guests</div>
-              </div>
-              <div className="text-base md:text-lg lg:text-xl font-semibold mb-1">
-                <div className="inline-flex items-center justify-between bg-gray-200 rounded-lg px-3 py-2 transition-all duration-300 group-hover:bg-gray-300 w-auto min-w-[120px]">
-                  <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-lg w-8 h-8 flex items-center justify-center" onClick={decrementCount}>-</button>
-                  <span className="text-gray-900 font-bold mx-3">{numberOfPeople}</span>
-                  <button className="text-gray-700 hover:text-cyan-600 transition-colors duration-300 text-lg w-8 h-8 flex items-center justify-center" onClick={incrementCount}>+</button>
-                </div>
-              </div>
-              <div className="text-xs md:text-sm text-gray-400">Add Guests</div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-px h-16 bg-gray-200"></div>
-
-            {/* Check-in Section - Desktop */}
-            <div className="flex flex-col w-auto group">
-              <div className="flex items-center gap-2 text-gray-600 mb-2">
-                <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082743/date_icon_zikap9.svg" alt="Check-in icon" className="w-[24px] sm:w-[28px] lg:w-[30px] aspect-[1.25]" />
-                <div className="text-sm md:text-base transition-colors duration-300 group-hover:text-cyan-600">Check-in</div>
-              </div>
-              <div className="text-base md:text-lg lg:text-xl font-semibold relative mb-1">
-                <DatePicker
-                  selected={checkInDate}
-                  onChange={handleCheckInChange}
-                  minDate={today}
-                  dateFormat="dd/MM/yyyy"
-                  className="bg-transparent border border-gray-300 p-2 text-gray-700 w-full appearance-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300 rounded-lg pr-8 text-sm sm:text-base"
-                />
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-300 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <div className="text-xs md:text-sm text-gray-400">Select date</div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-px h-16 bg-gray-200"></div>
-
-            {/* Check-out Section - Desktop */}
-            <div className="flex flex-col w-auto group">
-              <div className="flex items-center gap-2 text-gray-600 mb-2">
-                <img src="https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082742/checkout_w9sy9b.svg" alt="Check-out icon" className="w-[24px] sm:w-[28px] lg:w-[30px] aspect-[1.25]" />
-                <div className="text-sm md:text-base transition-colors duration-300 group-hover:text-cyan-600">Check-out</div>
-              </div>
-              <div className="text-base md:text-lg lg:text-xl font-semibold relative mb-1">
-                <DatePicker
-                  selected={checkOutDate}
-                  onChange={handleCheckOutChange}
-                  minDate={new Date(checkInDate.getTime() + 86400000)}
-                  dateFormat="dd/MM/yyyy"
-                  className="bg-transparent border border-gray-300 p-2 text-gray-700 w-full appearance-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300 rounded-lg pr-8 text-sm sm:text-base"
-                />
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none transition-colors duration-300 group-hover:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <div className="text-xs md:text-sm text-gray-400">Select date</div>
-            </div>
-
-            {/* Search Button - Desktop */}
-            <button className="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg flex items-center justify-center gap-2 min-h-[60px] md:min-h-[70px] lg:min-h-[80px]" onClick={navigateToKasol}>
-              <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-              <span className="text-white font-medium text-base md:text-lg">SEARCH</span>
-            </button>
+      <section className="on-dark bg-navy py-16 text-center sm:py-20">
+        <div className="container-page">
+          <h2 className="text-3xl text-white sm:text-4xl">Planning a stay in Kasol?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/80">Message us on WhatsApp for the quickest reply, or send an enquiry with your dates and we'll get back to you.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <WhatsAppButton />
+            <EnquiryButton variant="light">Send enquiry</EnquiryButton>
           </div>
-        </section>
-      </div>
-
-      {/* Page Sections */}
-      <div ref={propertiesRef} id="properties-section">
-        <Properties/>
-      </div>
-      <div id="testimonials-section">
-        <Testimonial/>
-      </div>
-      <div id="gallery-section" className="relative z-10">
-        <Gallery />
-      </div>
-      <div id="about-section">
-        <Host/>
-      </div>
-      <div id="blog-section">
-        <Blog />
-      </div>
-      <div id="contact-section">
-        <Footer />
-      </div>
-    </div>
-  );
+        </div>
+      </section>
+    </>
+  )
 }
-
-export default Home;

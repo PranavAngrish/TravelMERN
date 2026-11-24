@@ -1,0 +1,177 @@
+{
+  "name": "Mid Orchard Kasol",
+  "fullName": "Hotel Mid Orchard Kasol",
+  "tagline": "Pure vegetarian riverside hotel in Kasol, Parvati Valley",
+  "logo": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png",
+  "hero": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082727/bg_main_rzkapc.png",
+  "ogImage": "https://res.cloudinary.com/dgtt3iwmv/image/upload/c_fill,w_1200,h_630,q_auto,f_jpg/v1720081763/img3_wcox61.jpg",
+  "whatsapp": "918580641878",
+  "whatsappDisplay": "+91 85806 41878",
+  "phones": [
+    {
+      "label": "Enquiries",
+      "display": "+91 93179 00124",
+      "tel": "+919317900124"
+    },
+    {
+      "label": "Reservations",
+      "display": "+91 88940 00274",
+      "tel": "+918894000274"
+    }
+  ],
+  "email": "midorchardcottage@gmail.com",
+  "address": {
+    "locality": "Kasol",
+    "region": "Himachal Pradesh",
+    "country": "IN",
+    "text": "Kasol, Parvati Valley, Himachal Pradesh, India"
+  },
+  "social": {
+    "instagram": "https://instagram.com/midorchard",
+    "youtube": "https://www.youtube.com/@midorchardexperiences7154"
+  },
+  "amenities": [
+    "Private balcony",
+    "Lounge area",
+    "Wardrobe",
+    "High-speed WiFi",
+    "On-site parking",
+    "Restaurant"
+  ],
+  "pages": {
+    "/": {
+      "title": "Hotel Mid Orchard Kasol | Pure Veg Riverside Hotel in Kasol",
+      "description": "Stay at Mid Orchard, a pure vegetarian riverside hotel in Kasol with private balconies, mountain and river views, a restaurant and parking. Enquire or WhatsApp us."
+    },
+    "/rooms": {
+      "title": "Rooms & Suites in Kasol | Mid Orchard",
+      "description": "Super Deluxe, Luxury and Family rooms with private balconies and river or mountain views at Mid Orchard, Kasol. See photos and send an enquiry."
+    },
+    "/gallery": {
+      "title": "Photo Gallery | Mid Orchard Kasol",
+      "description": "Photos of the rooms, balconies, river and mountain views at Mid Orchard, a riverside hotel in Kasol, Parvati Valley."
+    },
+    "/enquiry": {
+      "title": "Send an Enquiry | Mid Orchard Kasol",
+      "description": "Tell us your dates and group size and the Mid Orchard team will get back to you. You can also message us on WhatsApp."
+    },
+    "/about": {
+      "title": "About Mid Orchard & Your Host | Kasol",
+      "description": "Meet the host behind Mid Orchard and learn what makes this pure vegetarian riverside hotel in Kasol a calm base for the Parvati Valley."
+    },
+    "/blog": {
+      "title": "Kasol Travel Blog | Mid Orchard",
+      "description": "Stay ideas and travel notes for families and couples visiting Kasol and the Parvati Valley."
+    },
+    "/policies": {
+      "title": "Booking Policies | Mid Orchard Kasol",
+      "description": "Terms, payment, cancellation and provisional booking policies for Mid Orchard, Kasol."
+    },
+    "/thank-you": {
+      "title": "Thank you | Mid Orchard Kasol",
+      "description": "Your enquiry has been received.",
+      "noindex": true
+    }
+  },
+  "rooms": [
+    {
+      "slug": "super-deluxe-room",
+      "name": "Super Deluxe Room",
+      "view": "Mountain view",
+      "summary": "A private balcony that opens to the mountains, with a lounge area and wardrobe.",
+      "description": "Indulge in luxury with our Super Deluxe Room, featuring a private balcony that opens up to breathtaking mountain vistas. Immerse yourself in comfort with spacious accommodations, contemporary design, and top-notch amenities. Elevate your stay with panoramic views, ensuring a memorable escape in the heart of nature's beauty.",
+      "image": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720770731/sd_yrzjmq.png",
+      "images": [
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081764/img1_h90jde.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img2_h82llu.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img3_wcox61.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785911/img6_fkvs2s.png",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img4_sw27x9.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081774/img6_mpykvx.jpg"
+      ]
+    },
+    {
+      "slug": "luxury-room",
+      "name": "Luxury Room",
+      "view": "River view",
+      "summary": "A private balcony over the Parvati river, with a lounge area and wardrobe.",
+      "description": "Indulge in opulence with our Luxury Room featuring a private balcony and mesmerizing river views. Immerse yourself in unparalleled comfort, surrounded by lavish furnishings and modern amenities. Bask in the serenity of nature while relishing the exquisite experience of our premium accommodations, where luxury meets the tranquility of a scenic riverside retreat.",
+      "image": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
+      "images": [
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img5_yap8bg.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5455_qs0np0.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192241/IMG_5453_qrvoly.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img4_jj5dzv.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img3_nk8x77.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786560/img8_fypqic.png",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5449_zv2vcw.jpg"
+      ]
+    },
+    {
+      "slug": "family-suite",
+      "name": "Family Suite",
+      "view": "River view",
+      "summary": "A spacious suite with a private balcony and river views, made for families.",
+      "description": "Discover our Family Suite, where luxury meets panoramic views from your private balcony. Perfectly designed for comfort and relaxation, this spacious retreat offers modern amenities and plush furnishings for an unforgettable stay. Whether you're admiring sunrise vistas or unwinding together, our suite promises a luxurious experience for the whole family.",
+      "image": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
+      "images": [
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img1_tpd6df.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img2_qqdoj2.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img3_l9xlll.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785911/img6_fkvs2s.png",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img5_mgih6e.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192238/IMG_5462_kzkz0z.jpg",
+        "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192231/IMG_5454_hguvm7.jpg"
+      ]
+    }
+  ],
+  "redirects": {
+    "/midorchard-kasol": "/rooms",
+    "/midorchard-policy": "/policies",
+    "/host": "/about",
+    "/thankyou": "/thank-you",
+    "/kasol-mountain-view-hotel": "/rooms/super-deluxe-room",
+    "/deluxe-room-booking": "/enquiry?room=super-deluxe-room",
+    "/kasol-river-view-hotel": "/rooms/luxury-room",
+    "/river-view-booking": "/enquiry?room=luxury-room",
+    "/kasol-family-hotel": "/rooms/family-suite",
+    "/family-hotel-booking": "/enquiry?room=family-suite",
+    "/signin": "/",
+    "/signup": "/"
+  },
+  "gallery": [
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787202/img1_alrlgg.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img3_wcox61.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192236/IMG_5457_jhugic.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787229/img2_vgx6k2.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1722070994/IMG_0497_1_ek2ycd.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787205/img4_jnmqoa.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787216/img5_dtd1cy.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787201/img9_taptrr.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787259/img6_l4ae0z.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192231/IMG_5454_hguvm7.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720787216/img3_y10ptj.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5459_wtnxap.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192238/IMG_5462_kzkz0z.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192229/IMG_5450_vk8p6b.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192241/IMG_5453_qrvoly.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081764/img1_h90jde.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img2_h82llu.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785911/img6_fkvs2s.png",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081763/img4_sw27x9.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720081774/img6_mpykvx.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786537/img5_yap8bg.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5455_qs0np0.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img4_jj5dzv.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786539/img3_nk8x77.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720786560/img8_fypqic.png",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1751192232/IMG_5449_zv2vcw.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img1_tpd6df.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img2_qqdoj2.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img7_do0ndv.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785416/img3_l9xlll.jpg",
+    "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720785415/img5_mgih6e.jpg"
+  ]
+}

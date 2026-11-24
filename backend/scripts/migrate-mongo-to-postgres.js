@@ -6,7 +6,7 @@
  *     node backend/scripts/migrate-mongo-to-postgres.js
  *
  * 1. Writes a JSON backup of every collection to ./data-export/ (keep this safe).
- * 2. Creates the tables if needed and inserts users, forms and live tokens.
+ * 2. Creates the table if needed and imports the enquiries (forms).
  * Safe to re-run: rows already imported (matched by old Mongo _id / email) are skipped.
  * Password hashes are copied as-is, so existing users can still log in.
  */
@@ -21,17 +21,6 @@ const OUT_DIR = path.join(__dirname, "../../data-export");
 const iso = (d) => (d ? new Date(d).toISOString() : null);
 const day = (d) => (d ? new Date(d).toISOString().slice(0, 10) : null);
 
-const toUserRow = (u) => ({
-  legacy_id: String(u._id),
-  user_name: u.userName,
-  email: u.email,
-  password: u.password,
-  verified: Boolean(u.verified),
-  profile_picture: u.profilePicture || null,
-  created_at: iso(u.createdAt) || new Date().toISOString(),
-  updated_at: iso(u.updatedAt) || iso(u.createdAt) || new Date().toISOString(),
-});
-
 const toFormRow = (f) => ({
   legacy_id: String(f._id),
   user_name: f.userName ?? null,
@@ -45,9 +34,7 @@ const toFormRow = (f) => ({
   created_at: f._id && f._id.getTimestamp ? f._id.getTimestamp().toISOString() : new Date().toISOString(),
 });
 
-const isLiveToken = (t, now = Date.now()) => t.createdAt && now - new Date(t.createdAt).getTime() < 3600 * 1000;
-
-module.exports = { toUserRow, toFormRow, isLiveToken };
+module.exports = { toFormRow };
 
 // --- main ----------------------------------------------------------------
 async function main() {
@@ -55,7 +42,7 @@ async function main() {
   if (!process.env.DATABASE_URL) throw new Error("Set DATABASE_URL to the Postgres connection string");
 
   const { MongoClient } = require("mongodb");
-  const { pool, initDb, DEFAULT_PIC } = require("../db");
+  const { pool, initDb } = require("../db");
 
   const client = await MongoClient.connect(MONGO_URI);
   const mdb = client.db(); // database named in the URI
@@ -71,24 +58,9 @@ async function main() {
   }
   console.log(`Exported to ${OUT_DIR}: ${users.length} users, ${forms.length} forms, ${tokens.length} tokens`);
 
-  // 2. Import
+  // 2. Import enquiries (accounts were removed from the site, so users/tokens are only backed up)
   await initDb();
-  const idMap = new Map(); // mongo user _id -> new postgres id
-  let newUsers = 0, newForms = 0;
-
-  for (const u of users) {
-    const r = toUserRow(u);
-    const res = await pool.query(
-      `INSERT INTO users (legacy_id, user_name, email, password, verified, profile_picture, created_at, updated_at)
-       VALUES ($1,$2,$3,$4,$5,COALESCE($6, $9),$7,$8)
-       ON CONFLICT DO NOTHING RETURNING id`,
-      [r.legacy_id, r.user_name, r.email, r.password, r.verified, r.profile_picture, r.created_at, r.updated_at, DEFAULT_PIC]
-    );
-    if (res.rowCount) newUsers++;
-    const found = await pool.query("SELECT id FROM users WHERE legacy_id = $1 OR email = $2 LIMIT 1", [r.legacy_id, r.email]);
-    if (found.rows[0]) idMap.set(String(u._id), found.rows[0].id);
-  }
-
+  let newForms = 0;
   for (const f of forms) {
     const r = toFormRow(f);
     const res = await pool.query(
@@ -99,18 +71,7 @@ async function main() {
     newForms += res.rowCount;
   }
 
-  let newTokens = 0;
-  for (const t of tokens.filter((t) => isLiveToken(t))) {
-    const uid = idMap.get(String(t.userId));
-    if (!uid) continue;
-    const res = await pool.query(
-      `INSERT INTO tokens (user_id, token, created_at) VALUES ($1,$2,$3) ON CONFLICT DO NOTHING`,
-      [uid, t.token, iso(t.createdAt)]
-    );
-    newTokens += res.rowCount;
-  }
-
-  console.log(`Imported: ${newUsers}/${users.length} users, ${newForms}/${forms.length} forms, ${newTokens} live tokens`);
+  console.log(`Imported: ${newForms}/${forms.length} enquiries (users and tokens are in the JSON backup only)`);
   await pool.end();
 }
 

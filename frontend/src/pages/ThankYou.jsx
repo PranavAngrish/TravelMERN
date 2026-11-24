@@ -1,35 +1,19 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
+import { WhatsAppButton } from '../components/Cta'
+import { site } from '../lib/site'
+import useSeo from '../lib/useSeo'
 
-function ThankYouPage() {
-  const logo = 'https://res.cloudinary.com/dgtt3iwmv/image/upload/v1720082755/logo_qf2djj.png';
-  const navigate = useNavigate();
-  const location = useLocation();
-  const propsToSend = location.state || {};
-
+export default function ThankYou() {
+  const { state } = useLocation()
+  useSeo(site.pages['/thank-you'].title, site.pages['/thank-you'].description)
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white p-6 sm:p-10 rounded-xl shadow-md">
-        <div className="flex justify-center">
-          <img className="h-12 w-auto sm:h-16" src={logo} alt="Logo" />
-        </div>
-        <h2 className="mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
-          Thank You for Your Enquiry
-        </h2>
-        <p className="mt-2 text-center text-sm sm:text-base text-gray-600">
-          We appreciate your interest in our {propsToSend.roomName || 'room'}. Our team will review your request and contact you soon.
-        </p>
-        <div className="mt-6">
-          <button
-            onClick={() => navigate('/')}
-            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300"
-          >
-            Return to Home
-          </button>
-        </div>
+    <div className="container-page flex min-h-[70svh] flex-col items-start justify-center pb-20 pt-32">
+      <h1 className="text-4xl text-navy sm:text-5xl">Thank you{state?.name ? `, ${state.name}` : ''}</h1>
+      <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink/75">We've received your enquiry{state?.room ? ` for the ${state.room}` : ''} and will get back to you soon. For a faster reply, message us on WhatsApp.</p>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <WhatsAppButton text={state?.waText} />
+        <Link to="/" className="btn-outline">Back to home</Link>
       </div>
     </div>
-  );
+  )
 }
-
-export default ThankYouPage;

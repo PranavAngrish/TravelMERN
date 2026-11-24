@@ -1,0 +1,34 @@
+{
+  "reviews": [
+    {
+      "name": "Writuparna Das",
+      "location": "Family Visitor",
+      "rating": 5,
+      "text": "This hotel is very beautiful. The interior design is so good. All the stuffs are very friendly and helpful. The best part is the food. They serve very tasty and healthy food. Sashi Rajput bhaiya is a very nice person. His behaviour is too good. We enjoyed our stay here."
+    },
+    {
+      "name": "Hemant Kumar",
+      "location": "Visitor",
+      "rating": 4,
+      "text": "We looked for many hotels online, found this one fascinating. After staying here for 2 days, I must say this is one of the finest property and we loved the food. I think this is the only pure vegetarian hotel in Kasol."
+    },
+    {
+      "name": "Mohin Gupta",
+      "location": "Solo Traveller",
+      "rating": 5,
+      "text": "The place is wonderful, Its a struggle to find Family hotels in Kasol but Mid Orchard is just the solution. The place is wonderful and the views are stunning. Even the staff is very cooperative and the owner is such a calm and a very approachable person. I loved my stay here."
+    },
+    {
+      "name": "Siddhi Mishra",
+      "location": "Visitor",
+      "rating": 5,
+      "text": "Stayed for 3 days in this lovely place. The staff is very cooperative and helpful. Also, the river side view is amazing from the hotel. We were only 2 girls and felt completely safe and comfortable throughout our stay. Highly recommend this place."
+    }
+  ],
+  "host": {
+    "name": "Abhishek Taneja",
+    "location": "Kasol",
+    "description": "B.Tech graduate in ECE with professional experience at Ericsson Global India, Noida (2014-2016). Since 2016, I have specialized in the tourism industry, developing and managing PAN India travel packages and operations for destinations such as Andaman, Kerala, Sikkim, Meghalaya, Himachal Pradesh, Uttarakhand, as well as international locations like Singapore, Maldives, Bali, and Dubai. In 2019, I established and presently oversee the operations of three hospitality properties located in Himachal Pradesh.",
+    "imageSrc": "https://res.cloudinary.com/dgtt3iwmv/image/upload/v1721989532/Abhishek_photo_fdkxcc.jpg"
+  }
+}
