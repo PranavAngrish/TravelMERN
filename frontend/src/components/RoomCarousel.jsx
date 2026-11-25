@@ -22,11 +22,11 @@ export default function RoomCarousel({ images, label }) {
     const t = (n + images.length) % images.length
     el.scrollTo({ left: t * el.clientWidth, behavior: 'smooth' })
   }
-  const arrow = 'absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy shadow transition hover:bg-white md:flex'
+  const arrow = 'absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy shadow-soft transition hover:bg-white md:flex'
 
   return (
     <div className="relative">
-      <ul ref={track} className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-mist" aria-label={`${label} photos`}>
+      <ul ref={track} className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto shape-tl bg-mist" aria-label={`${label} photos`}>
         {images.map((src, n) => (
           <li key={src} className="w-full flex-none snap-center" aria-label={`Photo ${n + 1} of ${images.length}`}>
             <button onClick={() => setOpen(n)} className="block w-full cursor-zoom-in" aria-label={`View photo ${n + 1} full size`}>

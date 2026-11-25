@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import api from '../api/axios'
 import { site, getRoom, waLink } from '../lib/site'
 import { WhatsAppButton } from '../components/Cta'
+import Page from '../components/Page'
 import useSeo from '../lib/useSeo'
 
 const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10)
@@ -14,10 +15,16 @@ export default function Enquiry() {
   const navigate = useNavigate()
   const [params] = useSearchParams()
   const today = iso(new Date())
+  // The home page booking bar passes dates and guests along; accept only sensible values
+  const dateParam = (k) => { const v = params.get(k); return /^\d{4}-\d{2}-\d{2}$/.test(v || '') && v >= today ? v : '' }
+  const preIn = dateParam('checkIn')
+  const preOut = dateParam('checkOut')
+  const preGuests = Number(params.get('guests'))
   const [f, setF] = useState({
     name: '', phone: '', email: '',
     room: getRoom(params.get('room')) ? params.get('room') : '',
-    checkIn: '', checkOut: '', guests: '2', message: '', website: '',
+    checkIn: preIn, checkOut: preIn && preOut > preIn ? preOut : preIn ? addDays(preIn, 1) : '',
+    guests: preGuests >= 1 && preGuests <= 20 ? String(Math.floor(preGuests)) : '2', message: '', website: '',
   })
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -46,13 +53,10 @@ export default function Enquiry() {
 
   const label = 'mb-1.5 block text-sm font-medium text-navy'
   return (
-    <div className="container-page pb-20 pt-28 sm:pt-36">
-      <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+    <Page title="Send an enquiry" lede="Tell us your dates and group size. We'll get back to you on the number you give us.">
+      <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
         <div>
-          <h1 className="text-4xl text-navy sm:text-5xl">Send an enquiry</h1>
-          <p className="mt-4 max-w-xl text-lg text-ink/75">Tell us your dates and group size. We'll get back to you on the number you give us.</p>
-
-          <form onSubmit={submit} className="mt-10 grid gap-5 sm:grid-cols-2" noValidate={false}>
+          <form onSubmit={submit} className="grid gap-5 sm:grid-cols-2" noValidate={false}>
             <div><label className={label} htmlFor="name">Your name</label><input id="name" className="field" required minLength={2} maxLength={80} autoComplete="name" value={f.name} onChange={set('name')} /></div>
             <div><label className={label} htmlFor="phone">Phone / WhatsApp</label><input id="phone" className="field" required type="tel" inputMode="tel" autoComplete="tel" pattern="[0-9 +\(\)\-]{8,20}" value={f.phone} onChange={set('phone')} placeholder="+91 98765 43210" /></div>
             <div className="sm:col-span-2"><label className={label} htmlFor="email">Email <span className="font-normal text-ink/55">(optional)</span></label><input id="email" className="field" type="email" autoComplete="email" maxLength={254} value={f.email} onChange={set('email')} /></div>
@@ -79,13 +83,13 @@ export default function Enquiry() {
           </form>
         </div>
 
-        <aside className="h-fit rounded-2xl bg-mist p-6 lg:mt-24">
-          <h2 className="text-2xl text-navy">Prefer to chat?</h2>
-          <p className="mt-2 leading-relaxed text-ink/75">Message us on WhatsApp for the quickest reply. We'll pass on what you've filled in so far.</p>
-          <WhatsAppButton text={waText} className="mt-5 w-full" />
-          <p className="mt-5 text-sm text-ink/65">Or call {site.phones.map((x) => x.display).join(' / ')}.</p>
+        <aside className="on-dark h-fit rounded-2xl bg-navy p-7 text-white shadow-lift sm:p-8 lg:sticky lg:top-28">
+          <h2 className="text-2xl">Prefer to chat?</h2>
+          <p className="mt-3 leading-relaxed text-white/75">Message us on WhatsApp for the quickest reply. We'll pass on what you've filled in so far.</p>
+          <WhatsAppButton text={waText} className="mt-6 w-full" />
+          <p className="mt-5 text-sm text-white/65">Or call {site.phones.map((x) => x.display).join(' / ')}.</p>
         </aside>
       </div>
-    </div>
+    </Page>
   )
 }

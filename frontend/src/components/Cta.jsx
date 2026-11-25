@@ -14,12 +14,13 @@ export function WhatsAppButton({ text, children = 'WhatsApp us now', className =
 // Class names are written out in full so Tailwind can see and generate them
 const variants = {
   primary: 'btn-primary',
+  brand: 'btn-brand',
   light: 'btn-light',
   outline: 'btn-outline',
   'outline-light': 'btn-outline-light',
 }
 
-// variant: primary | light | outline | outline-light
+// variant: primary | brand | light | outline | outline-light
 export function EnquiryButton({ room, children = 'Send enquiry', variant = 'primary', className = '' }) {
   return (
     <Link to={room ? `/enquiry?room=${room}` : '/enquiry'} className={`${variants[variant]} ${className}`}>

@@ -1,4 +1,5 @@
-import RoomCard from '../components/RoomCard'
+import { RoomFeature } from '../components/RoomCard'
+import Page from '../components/Page'
 import { site } from '../lib/site'
 import useSeo from '../lib/useSeo'
 
@@ -6,12 +7,10 @@ export default function Rooms() {
   const p = site.pages['/rooms']
   useSeo(p.title, p.description)
   return (
-    <div className="container-page pb-20 pt-28 sm:pt-36">
-      <h1 className="text-4xl text-navy sm:text-5xl">Rooms in Kasol</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/75">Every room has a private balcony, a lounge area and a wardrobe. Pick a view and tell us your dates.</p>
-      <div className="mt-12 grid gap-10 md:grid-cols-3">
-        {site.rooms.map((r) => <RoomCard key={r.slug} room={r} />)}
+    <Page title="Rooms in Kasol" lede="Every room has a private balcony, a lounge area and a wardrobe. Pick a view and tell us your dates.">
+      <div className="grid gap-16 pt-4 sm:gap-24">
+        {site.rooms.map((r, i) => <RoomFeature key={r.slug} room={r} flip={i % 2 === 1} />)}
       </div>
-    </div>
+    </Page>
   )
 }
